@@ -1,0 +1,8 @@
+python-docx>=0.8.11
+tkinter  # Usually included with Python
+argparse  # Usually included with Python
+dataclasses  # Usually included with Python 3.7+
+datetime  # Usually included with Python
+os  # Usually included with Python
+sys  # Usually included with Python
+zipfile  # Usually included with Python

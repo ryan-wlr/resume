@@ -1,0 +1,4 @@
+# AI Resume Optimizer Requirements
+python-docx>=0.8.11
+openai>=0.28.0
+requests>=2.28.0
