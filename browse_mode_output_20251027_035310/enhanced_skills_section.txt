@@ -1,0 +1,18 @@
+ENHANCED TECHNICAL SKILLS SECTION:
+
+Programming: Python, C/C++, Assembly, Bash, PowerShell, Go, Rust, JavaScript, PHP
+Operating Systems: Kali Linux, Parrot OS, BlackArch, Windows, macOS, Unix/Linux
+Penetration Testing: Metasploit, Nmap, Wireshark, Burp Suite, OWASP ZAP, Cobalt Strike
+Security Tools: Nessus, Qualys, Nikto, SQLMap, John the Ripper, Hashcat, Hydra
+SIEM Platforms: Splunk, QRadar, ArcSight, Elastic Security, CrowdStrike Falcon
+Compliance: ISO 27001, NIST Framework, SOX, HIPAA, GDPR, PCI DSS, MITRE ATT&CK
+
+ADDITIONAL COMPETENCIES:
+• Problem-solving and analytical thinking
+• Team collaboration and communication
+• Time management and project coordination
+• Safety protocols and compliance
+• Technical documentation and reporting
+• Continuous learning and professional development
+
+This enhanced skills section strategically highlights both technical competencies and soft skills that are highly valued by employers in the security_engineer field.

@@ -1,0 +1,28 @@
+ATS-OPTIMIZED RESUME VERSION:
+
+RYAN THOMAS WEILER
+Cybersecurity Engineer
+
+TECHNICAL SKILLS:
+Security Tools: Metasploit, Nmap, Wireshark, Burp Suite, OWASP ZAP, Nessus
+Programming: Python, PowerShell, Bash, C++, Assembly, Go, Rust
+SIEM Platforms: Splunk, QRadar, ArcSight, Elastic Security, Chronicle
+Compliance: ISO 27001, NIST Framework, SOX, HIPAA, GDPR, PCI DSS
+
+PROFESSIONAL EXPERIENCE:
+Cybersecurity Engineer | Security Analyst | 2022 - Present
+• Conducted penetration testing and vulnerability assessments identifying 200+ security issues
+• Implemented security monitoring systems using SIEM tools reducing incident response time by 60%
+• Developed security automation scripts with Python and PowerShell for threat detection
+• Led incident response efforts for 50+ security events achieving 100% containment success rate
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+CERTIFICATIONS & ACHIEVEMENTS:
+• Automated Penetration Testing Suite: https://github.com/ryan-wlr/pentest-automation
+• Threat Intelligence Platform: https://github.com/ryan-wlr/threat-intel
+• Security Monitoring Dashboard: https://github.com/ryan-wlr/security-dashboard
+
+This ATS-optimized version incorporates relevant keywords and proper formatting to maximize compatibility with applicant tracking systems while maintaining readability for human reviewers.
