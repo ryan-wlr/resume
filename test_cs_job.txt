@@ -1,0 +1,33 @@
+Senior Full Stack Developer Position at TechCorp
+
+We're seeking an experienced Full Stack Developer to join our engineering team.
+
+Required Programming Languages:
+- JavaScript (ES6+) and TypeScript for frontend development
+- Python or Java for backend services
+- SQL for database operations
+- HTML5 and CSS3 for markup and styling
+
+Required Frameworks & Technologies:
+- React, Angular, or Vue.js for frontend
+- Node.js, Django, or Spring Boot for backend
+- PostgreSQL or MongoDB for databases
+- Docker and Kubernetes for containerization
+- AWS, Azure, or GCP for cloud deployment
+
+Preferred Skills:
+- Go or Rust for performance-critical services
+- Machine Learning with TensorFlow or PyTorch
+- DevOps tools like Jenkins, GitLab CI, or GitHub Actions
+- Mobile development with React Native or Flutter
+
+Responsibilities:
+- Design and implement scalable web applications
+- Build responsive user interfaces with modern frameworks
+- Develop RESTful APIs and microservices
+- Deploy applications using cloud platforms
+- Collaborate with cross-functional teams using Agile methodologies
+- Write comprehensive tests and maintain code quality
+
+Experience Level: 3-5 years in full stack development
+Company: Leading technology company with excellent benefits

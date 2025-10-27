@@ -1,0 +1,59 @@
+COMPREHENSIVE CAREER RESUME - SOFTWARE ENGINEER
+
+💻 THE CODE CRAFTSMAN: Transforming complex problems into elegant solutions that power the digital world
+
+RYAN THOMAS WEILER
+Software Engineer Professional
+
+CONTACT INFORMATION:
+📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com
+🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr
+
+PROFESSIONAL SUMMARY:
+Results-driven software engineer professional with proven expertise in Languages: C#, C/C++, Python, Java, JavaScript, SQL, HTML/CSS, PHP, Frameworks/Tools: .NET Blazor, ASP.NET MVC, Django, Flask, React, Git/GitHub, MySQL, MS SQL, AI/ML: TensorFlow, Keras, CNNs, NLP (RNNs/Transformers), scikit-learn, pandas, NumPy, Cloud/Other: AWS, Azure, Docker, Linux, Jupyter Notebooks, Algorithmic Trading. Demonstrated track record of delivering high-impact solutions and driving measurable results in fast-paced environments. Seeking to leverage technical excellence and leadership capabilities as Software Engineer at Target Company.
+
+CAREER NARRATIVE & VISION:
+Code is poetry, algorithms are symphonies, and great software tells the story of human ingenuity solving real-world challenges. My journey in software engineer has been driven by the belief that technology should enhance human potential. From my first "Hello World" to architecting systems that process millions of transactions, I understand that each line of code should be written with purpose and passion to create meaningful impact.
+
+CORE TECHNICAL COMPETENCIES:
+• Languages: C#, C/C++, Python, Java, JavaScript, SQL, HTML/CSS, PHP
+• Frameworks/Tools: .NET Blazor, ASP.NET MVC, Django, Flask, React, Git/GitHub, MySQL, MS SQL
+• AI/ML: TensorFlow, Keras, CNNs, NLP (RNNs/Transformers), scikit-learn, pandas, NumPy
+• Cloud/Other: AWS, Azure, Docker, Linux, Jupyter Notebooks, Algorithmic Trading
+
+SIGNATURE ACHIEVEMENTS:
+• Architected systems generating 15% annual returns with optimized risk management
+• Built scalable data pipelines processing 10,000+ daily data points with real-time analytics capabilities
+• Led development of platform serving 50,000+ active users with 99.9% uptime reliability
+• Open-source contributions downloaded 100,000+ times by global developer community
+
+PROFESSIONAL EXPERIENCE:
+• Led development of innovative solutions resulting in improved efficiency and performance
+• Collaborated with cross-functional teams to deliver projects on time and within budget
+• Implemented best practices and methodologies enhancing overall operational effectiveness
+• Mentored team members and contributed to knowledge sharing initiatives
+• Achieved measurable results through data-driven decision making and strategic planning
+
+KEY PROJECTS & INNOVATIONS:
+• The Analytics Engine: AI-powered algorithms achieving breakthrough performance metrics
+• Platform Revolution: Full-stack application democratizing advanced technology access
+• System Maestro: Real-time analytics dashboard used by professional teams
+• Code for Good: Open-source tools helping organizations optimize their operations
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+PROFESSIONAL DEVELOPMENT:
+• Continuous learning in software engineer technologies and methodologies
+• Active participation in professional development and industry conferences
+• Commitment to staying current with emerging trends and best practices
+• Leadership development through mentoring and cross-functional collaboration
+
+FUTURE VISION:
+Leveraging proven expertise and innovative problem-solving to drive meaningful impact as Software Engineer at Target Company, 
+while continuing to grow professionally and contribute to organizational success through technical excellence and leadership.
+
+---
+This comprehensive resume combines compelling career storytelling with detailed professional qualifications,
+optimized for both ATS systems and human recruiters seeking Software Engineer candidates.

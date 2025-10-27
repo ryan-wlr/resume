@@ -1,0 +1,44 @@
+RYAN THOMAS WEILER
+Data Scientist
+
+CONTACT INFORMATION:
+Phone: (561) 906-2118 | Email: ryan_wlr@yahoo.com
+LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/
+GitHub: https://github.com/ryan-wlr
+
+PROFESSIONAL SUMMARY:
+Results-driven data scientist professional with proven expertise in Python, R, SQL, Julia. 
+Demonstrated track record of delivering high-impact solutions and driving measurable results in fast-paced environments. 
+Seeking to leverage technical excellence and leadership capabilities as data scientist at nasa.
+
+CORE TECHNICAL COMPETENCIES:
+• Programming: Python, R, SQL, Julia, Scala, MATLAB
+• ML Libraries: scikit-learn, TensorFlow, PyTorch, Keras, XGBoost, pandas, NumPy
+• Data Visualization: Tableau, Power BI, matplotlib, seaborn, plotly, D3.js
+• Big Data: Apache Spark, Hadoop, AWS EMR, Databricks, Snowflake, Redshift
+
+PROFESSIONAL EXPERIENCE:
+
+Data Scientist | Machine Learning Engineer | 2022 - Present
+• Developed predictive models using Python, scikit-learn, and TensorFlow achieving 85% accuracy
+• Built automated data pipelines processing 1M+ records daily using pandas and Apache Spark
+• Created interactive dashboards with Tableau and Power BI for executive decision making
+• Implemented A/B testing frameworks resulting in 25% improvement in conversion rates
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+KEY PROJECTS & ACCOMPLISHMENTS:
+• Customer Churn Prediction Model: https://github.com/ryan-wlr/churn-prediction
+• Real-time Fraud Detection System: https://github.com/ryan-wlr/fraud-detection
+• Time Series Forecasting Platform: https://github.com/ryan-wlr/time-series-forecast
+
+ACHIEVEMENTS:
+• Consistently exceeded performance expectations in all roles and responsibilities
+• Recognized for technical excellence and professional growth within field
+• Contributed to successful completion of high-priority projects and initiatives
+• Demonstrated commitment to continuous learning and skill development
+
+This resume is optimized for data scientist positions with emphasis on technical skills,
+leadership capabilities, and measurable contributions to organizational success.

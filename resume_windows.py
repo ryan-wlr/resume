@@ -154,15 +154,109 @@ class ResumeOptimizer:
                 ]
             },
             'software_engineer': {
-                'skills': ['python', 'java', 'javascript', 'react', 'node.js', 'sql', 'mongodb', 
-                          'docker', 'kubernetes', 'aws', 'azure', 'machine learning', 'ai',
-                          'tensorflow', 'pytorch', 'pandas', 'numpy', 'flask', 'django'],
+                'skills': ['python', 'java', 'javascript', 'typescript', 'c++', 'c#', 'c', 'go', 'rust', 
+                          'kotlin', 'swift', 'scala', 'ruby', 'php', 'r', 'matlab', 'julia',
+                          'react', 'angular', 'vue.js', 'node.js', 'express.js', 'spring', 'django', 'flask',
+                          'html5', 'css3', 'sass', 'less', 'bootstrap', 'tailwind css',
+                          'sql', 'mysql', 'postgresql', 'mongodb', 'redis', 'elasticsearch',
+                          'docker', 'kubernetes', 'aws', 'azure', 'gcp', 'terraform',
+                          'git', 'github', 'gitlab', 'jenkins', 'cicd', 'devops',
+                          'machine learning', 'ai', 'deep learning', 'neural networks',
+                          'tensorflow', 'pytorch', 'scikit-learn', 'pandas', 'numpy', 'matplotlib',
+                          'microservices', 'restful apis', 'graphql', 'grpc', 'websockets',
+                          'agile', 'scrum', 'test driven development', 'unit testing',
+                          'linux', 'unix', 'bash', 'powershell', 'vim'],
                 'responsibilities': [
-                    "Design and implement scalable software solutions",
-                    "Collaborate with cross-functional teams",
-                    "Participate in code reviews and maintain high code quality",
-                    "Contribute to technical documentation and best practices",
-                    "Optimize application performance and reliability"
+                    "Design and implement scalable software solutions using modern programming languages",
+                    "Develop full-stack applications with frontend and backend technologies",
+                    "Build and optimize databases and data storage solutions",
+                    "Implement machine learning models and AI-powered features",
+                    "Deploy applications using cloud platforms and containerization",
+                    "Collaborate with cross-functional teams using agile methodologies",
+                    "Participate in code reviews and maintain high code quality standards",
+                    "Write comprehensive unit tests and documentation",
+                    "Optimize application performance and system reliability",
+                    "Mentor junior developers and contribute to technical best practices"
+                ]
+            },
+            'data_scientist': {
+                'skills': ['python', 'r', 'sql', 'machine learning', 'deep learning', 'statistics', 'data analysis',
+                          'pandas', 'numpy', 'scipy', 'scikit-learn', 'tensorflow', 'pytorch', 'keras',
+                          'jupyter', 'matplotlib', 'seaborn', 'tableau', 'power bi', 'big data',
+                          'hadoop', 'spark', 'aws', 'azure', 'gcp', 'data visualization', 'a/b testing'],
+                'responsibilities': [
+                    "Develop predictive models and machine learning algorithms",
+                    "Analyze large datasets to extract meaningful business insights",
+                    "Build data pipelines and automate data processing workflows",
+                    "Create compelling data visualizations and reports",
+                    "Collaborate with stakeholders to solve complex business problems",
+                    "Deploy machine learning models to production environments",
+                    "Conduct statistical analysis and hypothesis testing",
+                    "Clean and preprocess large datasets for analysis"
+                ]
+            },
+            'web_developer': {
+                'skills': ['html5', 'css3', 'javascript', 'typescript', 'react', 'angular', 'vue.js',
+                          'node.js', 'express.js', 'django', 'flask', 'spring boot', 'php', 'laravel',
+                          'responsive design', 'bootstrap', 'tailwind css', 'sass', 'less',
+                          'restful apis', 'graphql', 'websockets', 'sql', 'mongodb', 'git'],
+                'responsibilities': [
+                    "Design and develop responsive web applications",
+                    "Build user-friendly frontend interfaces using modern frameworks",
+                    "Develop backend APIs and server-side functionality",
+                    "Optimize web performance and ensure cross-browser compatibility",
+                    "Implement security best practices and data protection",
+                    "Collaborate with UX/UI designers and product teams",
+                    "Write clean, maintainable, and well-documented code",
+                    "Debug and troubleshoot web application issues"
+                ]
+            },
+            'mobile_developer': {
+                'skills': ['swift', 'kotlin', 'java', 'objective-c', 'react native', 'flutter', 'dart',
+                          'ios development', 'android development', 'xcode', 'android studio',
+                          'mobile ui/ux', 'core data', 'sqlite', 'firebase', 'push notifications',
+                          'app store', 'google play', 'mobile testing', 'performance optimization'],
+                'responsibilities': [
+                    "Develop native and cross-platform mobile applications",
+                    "Design intuitive mobile user interfaces and experiences",
+                    "Integrate with REST APIs and backend services",
+                    "Implement mobile-specific features like GPS and camera",
+                    "Optimize apps for performance and battery efficiency",
+                    "Test applications across different devices and OS versions",
+                    "Publish apps to app stores and manage releases",
+                    "Debug and resolve mobile-specific issues"
+                ]
+            },
+            'devops_engineer': {
+                'skills': ['docker', 'kubernetes', 'aws', 'azure', 'gcp', 'terraform', 'ansible',
+                          'jenkins', 'gitlab ci', 'github actions', 'linux', 'bash', 'python',
+                          'monitoring', 'prometheus', 'grafana', 'elk stack', 'microservices',
+                          'infrastructure as code', 'ci/cd', 'containerization', 'cloud architecture'],
+                'responsibilities': [
+                    "Design and implement CI/CD pipelines for automated deployments",
+                    "Manage cloud infrastructure and containerized applications",
+                    "Monitor system performance and implement alerting systems",
+                    "Automate infrastructure provisioning and configuration",
+                    "Ensure system security and compliance requirements",
+                    "Optimize application performance and scalability",
+                    "Troubleshoot production issues and implement solutions",
+                    "Collaborate with development teams on deployment strategies"
+                ]
+            },
+            'security_engineer': {
+                'skills': ['cybersecurity', 'penetration testing', 'vulnerability assessment', 'incident response',
+                          'security frameworks', 'risk assessment', 'encryption', 'network security',
+                          'firewalls', 'ids/ips', 'siem', 'compliance', 'iso 27001', 'nist',
+                          'python', 'bash', 'powershell', 'linux', 'windows security'],
+                'responsibilities': [
+                    "Conduct security assessments and vulnerability testing",
+                    "Implement security controls and monitoring systems",
+                    "Respond to security incidents and conduct forensic analysis",
+                    "Develop security policies and procedures",
+                    "Ensure compliance with security standards and regulations",
+                    "Perform risk assessments and security audits",
+                    "Design secure network architectures and systems",
+                    "Train teams on security best practices and awareness"
                 ]
             }
         }
@@ -194,7 +288,12 @@ class ResumeOptimizer:
             'nurse': ['Healthcare', 'Patient Care', 'Clinical Skills', 'Medical Technology'],
             'teacher': ['Education', 'Curriculum Development', 'Student Assessment', 'Classroom Management'],
             'mechanic': ['Automotive Repair', 'Vehicle Maintenance', 'Diagnostic Equipment', 'ASE Certification'],
-            'software_engineer': ['Software Development', 'Technology Solutions', 'System Architecture', 'Code Quality']
+            'software_engineer': ['Software Development', 'Technology Solutions', 'System Architecture', 'Code Quality'],
+            'data_scientist': ['Data Science', 'Machine Learning', 'Analytics', 'Business Intelligence'],
+            'web_developer': ['Web Development', 'Frontend Development', 'Backend Development', 'Full Stack'],
+            'mobile_developer': ['Mobile Development', 'iOS Development', 'Android Development', 'Mobile Apps'],
+            'devops_engineer': ['DevOps', 'Cloud Infrastructure', 'CI/CD', 'System Administration'],
+            'security_engineer': ['Cybersecurity', 'Information Security', 'Risk Management', 'Compliance']
         }
         
         # Get industry keywords or generate dynamically
@@ -243,7 +342,12 @@ class ResumeOptimizer:
             'electrician': 'Industrial Electrician & Maintenance Specialist',
             'dishwasher': 'Kitchen Staff & Food Service Professional',
             'chef': 'Executive Chef & Culinary Professional',
-            'software_engineer': 'Software Engineer | Python Developer | Financial Technology Specialist'
+            'software_engineer': 'Software Engineer | Python Developer | Financial Technology Specialist',
+            'data_scientist': 'Data Scientist | Machine Learning Engineer | Analytics Specialist',
+            'web_developer': 'Full Stack Web Developer | Frontend & Backend Specialist',
+            'mobile_developer': 'Mobile App Developer | iOS & Android Specialist',
+            'devops_engineer': 'DevOps Engineer | Cloud Infrastructure Specialist',
+            'security_engineer': 'Cybersecurity Engineer | Information Security Specialist'
         }
         
         summary_map = {
@@ -258,7 +362,12 @@ class ResumeOptimizer:
             'electrician': 'Experienced Industrial Electrician with 3+ years of expertise in electrical system installation, maintenance, and troubleshooting. Proven expertise in motor controls, PLCs, and electrical diagnostics with demonstrated ability to reduce equipment downtime by 25% through preventive maintenance programs. Strong knowledge of NEC codes and OSHA safety standards. Committed to delivering safe, reliable electrical solutions.',
             'dishwasher': 'Dedicated Kitchen Staff with 3+ years of experience in high-volume food service operations and commercial kitchen management. Proven expertise in dish washing, sanitization, and equipment maintenance with demonstrated ability to maintain 99% cleanliness standards during peak service hours. Strong knowledge of food safety protocols, ServSafe certification, and kitchen workflow optimization. Committed to supporting efficient restaurant operations through reliable service and attention to detail.',
             'chef': 'Experienced Executive Chef with 3+ years of comprehensive culinary expertise in menu development, kitchen management, and high-volume food service operations. Proven expertise in culinary techniques, staff supervision, and cost control with demonstrated ability to increase restaurant revenue by 25% through innovative menu creation. Strong knowledge of food safety regulations, kitchen operations, and culinary arts. Committed to delivering exceptional dining experiences through creative cuisine and efficient kitchen leadership.',
-            'software_engineer': 'Dedicated Software Engineer with 3+ years of experience developing innovative financial technology solutions and automated trading systems. Proven expertise in Python development, machine learning applications, and algorithmic trading with demonstrated results including 25% portfolio performance improvement. Strong background in full-stack development, database optimization, and collaborative software engineering practices. Passionate about leveraging cutting-edge technology to solve complex financial and business challenges.'
+            'software_engineer': 'Dedicated Software Engineer with 3+ years of experience developing innovative financial technology solutions and automated trading systems. Proven expertise in Python development, machine learning applications, and algorithmic trading with demonstrated results including 25% portfolio performance improvement. Strong background in full-stack development, database optimization, and collaborative software engineering practices. Passionate about leveraging cutting-edge technology to solve complex financial and business challenges.',
+            'data_scientist': 'Experienced Data Scientist with 3+ years of expertise in machine learning, statistical analysis, and big data processing. Proven expertise in Python, R, and SQL with demonstrated ability to improve business outcomes by 30% through predictive modeling and data-driven insights. Strong background in TensorFlow, scikit-learn, and cloud platforms. Committed to transforming complex datasets into actionable business intelligence and strategic recommendations.',
+            'web_developer': 'Skilled Full Stack Web Developer with 3+ years of experience building responsive web applications and scalable backend systems. Proven expertise in JavaScript, TypeScript, React, and Node.js with demonstrated ability to improve application performance by 40% through optimization techniques. Strong background in modern web technologies, RESTful APIs, and database design. Passionate about creating exceptional user experiences and efficient development workflows.',
+            'mobile_developer': 'Expert Mobile App Developer with 3+ years of experience creating native and cross-platform applications for iOS and Android. Proven expertise in Swift, Kotlin, and React Native with demonstrated success achieving 4.8+ star ratings and 100K+ downloads. Strong background in mobile UI/UX design, performance optimization, and app store deployment. Committed to delivering innovative mobile solutions that enhance user engagement and drive business growth.',
+            'devops_engineer': 'Skilled DevOps Engineer with 3+ years of experience designing and implementing cloud infrastructure and CI/CD pipelines. Proven expertise in AWS, Docker, and Kubernetes with demonstrated ability to reduce deployment time by 80% and improve system reliability to 99.99% uptime. Strong background in infrastructure as code, monitoring, and security best practices. Passionate about automating workflows and enabling efficient software delivery.',
+            'security_engineer': 'Experienced Cybersecurity Engineer with 3+ years of expertise in vulnerability assessment, incident response, and security architecture. Proven expertise in penetration testing, SIEM platforms, and security automation with demonstrated success identifying and mitigating 200+ security vulnerabilities. Strong background in Python scripting, compliance frameworks, and threat analysis. Committed to protecting organizational assets and maintaining robust security postures.'
         }
         
         if "analyze flaws" in prompt.lower():
@@ -878,6 +987,14 @@ The optimized resume now better aligns with modern hiring practices and should s
         detected_field = self.detect_career_field(target_role.lower())
         field_data = self.get_field_data(detected_field)
         
+        # Extract key skills for summary (first few items from first skill category)
+        first_skill_line = field_data['skills'][0] if field_data['skills'] else ""
+        if ':' in first_skill_line:
+            key_skills = first_skill_line.split(':')[1].split(',')[:4]
+            key_skills = [skill.strip() for skill in key_skills]
+        else:
+            key_skills = [detected_field.replace('_', ' ')]
+        
         enhanced_resume = f"""RYAN THOMAS WEILER
 {field_data['experience_title'].split('|')[0].strip()}
 
@@ -887,30 +1004,23 @@ LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/
 GitHub: https://github.com/ryan-wlr
 
 PROFESSIONAL SUMMARY:
-Results-driven {detected_field.replace('_', ' ')} professional with proven expertise in {', '.join(field_data['skills'][:4])}. 
+Results-driven {detected_field.replace('_', ' ')} professional with proven expertise in {', '.join(key_skills)}. 
 Demonstrated track record of delivering high-impact solutions and driving measurable results in fast-paced environments. 
 Seeking to leverage technical excellence and leadership capabilities as {target_role} at {target_company}.
 
 CORE TECHNICAL COMPETENCIES:
-{chr(10).join(['• ' + skill for skill in field_data['skills'][:12]])}
+{chr(10).join(['• ' + skill for skill in field_data['skills']])}
 
 PROFESSIONAL EXPERIENCE:
 
 {field_data['experience_title']}
-• Led development of innovative solutions resulting in improved efficiency and performance
-• Collaborated with cross-functional teams to deliver projects on time and within budget  
-• Implemented best practices and methodologies enhancing overall operational effectiveness
-• Mentored team members and contributed to knowledge sharing initiatives
-• Achieved measurable results through data-driven decision making and strategic planning
+{chr(10).join(['• ' + bullet for bullet in field_data['experience_bullets']])}
 
 EDUCATION:
 {field_data['education']}
 
-KEY PROJECTS:
-• Advanced {detected_field.replace('_', ' ')} initiative demonstrating expertise in core competencies
-• Cross-functional collaboration project showcasing leadership and communication skills
-• Innovation project applying cutting-edge techniques to solve complex challenges
-• Mentorship and knowledge transfer initiative contributing to team development
+KEY PROJECTS & ACCOMPLISHMENTS:
+{chr(10).join(['• ' + project for project in field_data['projects']])}
 
 ACHIEVEMENTS:
 • Consistently exceeded performance expectations in all roles and responsibilities
@@ -922,6 +1032,124 @@ This resume is optimized for {target_role} positions with emphasis on technical 
 leadership capabilities, and measurable contributions to organizational success."""
 
         return enhanced_resume
+    
+    def create_combined_resume(self, narrative_content: str, enhanced_content: str, 
+                             target_role: str, target_company: str) -> str:
+        """Create a comprehensive resume that combines storytelling narrative with professional sections"""
+        print("\n>>> CREATING COMBINED STORYTELLING + PROFESSIONAL RESUME...")
+        
+        # Extract key elements from both versions
+        narrative_lines = narrative_content.split('\n')
+        enhanced_lines = enhanced_content.split('\n')
+        
+        # Find the professional summary from enhanced version
+        professional_summary = ""
+        enhanced_skills = []
+        enhanced_experience = []
+        
+        current_section = None
+        for line in enhanced_lines:
+            line = line.strip()
+            if 'PROFESSIONAL SUMMARY:' in line:
+                current_section = 'summary'
+                continue
+            elif 'CORE TECHNICAL COMPETENCIES:' in line:
+                current_section = 'skills'
+                continue
+            elif 'PROFESSIONAL EXPERIENCE:' in line:
+                current_section = 'experience'
+                continue
+            elif line.startswith('EDUCATION:') or line.startswith('CONTACT'):
+                current_section = None
+                continue
+            
+            if current_section == 'summary' and line and not line.startswith('•'):
+                professional_summary += line + " "
+            elif current_section == 'skills' and line.startswith('•'):
+                enhanced_skills.append(line[1:].strip())
+            elif current_section == 'experience' and line.startswith('•'):
+                enhanced_experience.append(line[1:].strip())
+        
+        # Extract storytelling elements from narrative version
+        story_hook = ""
+        story_narrative = ""
+        story_achievements = []
+        story_projects = []
+        
+        current_section = None
+        for line in narrative_lines:
+            line = line.strip()
+            if '🔥 THE' in line or '🔬 THE' in line or '💻 THE' in line or '🌟 THE' in line:
+                story_hook = line
+            elif 'PROFESSIONAL NARRATIVE:' in line:
+                current_section = 'narrative'
+                continue
+            elif 'KEY ACHIEVEMENTS' in line:
+                current_section = 'achievements'
+                continue
+            elif 'DEFINING PROJECTS' in line:
+                current_section = 'projects'
+                continue
+            elif line.startswith('CAREER JOURNEY') or line.startswith('TECHNICAL EXPERTISE') or line.startswith('EDUCATION'):
+                current_section = None
+                continue
+            
+            if current_section == 'narrative' and line and not line.startswith('CAREER'):
+                story_narrative += line + " "
+            elif current_section == 'achievements' and line.startswith('•'):
+                story_achievements.append(line[1:].strip())
+            elif current_section == 'projects' and line.startswith('•'):
+                story_projects.append(line[1:].strip())
+        
+        # Create the combined resume
+        combined_resume = f"""COMPREHENSIVE CAREER RESUME - {target_role.upper()}
+
+{story_hook}
+
+RYAN THOMAS WEILER
+{target_role} Professional
+
+CONTACT INFORMATION:
+📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com
+🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr
+
+PROFESSIONAL SUMMARY:
+{professional_summary.strip()}
+
+CAREER NARRATIVE & VISION:
+{story_narrative.strip()}
+
+CORE TECHNICAL COMPETENCIES:
+{chr(10).join(['• ' + skill for skill in enhanced_skills[:6]])}
+
+SIGNATURE ACHIEVEMENTS:
+{chr(10).join(['• ' + achievement for achievement in story_achievements[:5]])}
+
+PROFESSIONAL EXPERIENCE:
+{chr(10).join(['• ' + exp for exp in enhanced_experience[:8]])}
+
+KEY PROJECTS & INNOVATIONS:
+{chr(10).join(['• ' + project for project in story_projects[:6]])}
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+PROFESSIONAL DEVELOPMENT:
+• Continuous learning in {target_role.lower()} technologies and methodologies
+• Active participation in professional development and industry conferences
+• Commitment to staying current with emerging trends and best practices
+• Leadership development through mentoring and cross-functional collaboration
+
+FUTURE VISION:
+Leveraging proven expertise and innovative problem-solving to drive meaningful impact as {target_role} at {target_company}, 
+while continuing to grow professionally and contribute to organizational success through technical excellence and leadership.
+
+---
+This comprehensive resume combines compelling career storytelling with detailed professional qualifications,
+optimized for both ATS systems and human recruiters seeking {target_role} candidates."""
+
+        return combined_resume
     
     def create_narrative_resume(self, resume_content: str, job_analysis: JobAnalysis, 
                               target_role: str, target_company: str) -> str:
@@ -1232,7 +1460,7 @@ Chapter 3: THE MASTERY (Current Focus)
         
         # Generate professional narrative
         professional_narrative = f"""PROFESSIONAL NARRATIVE:
-{story_elements['narrative_intro']} My journey in {display_field.lower()} has been driven by {story_elements['driving_force']}. {story_elements['expertise_statement']} I understand that {story_elements['field_philosophy']}"""
+{story_elements['narrative_intro']} Driven by {story_elements['driving_force']}, {story_elements['expertise_statement']} I understand that {story_elements['field_philosophy']}"""
         
         # Generate career progression chapters
         career_progression = f"""Chapter 1: THE FOUNDATION ({story_elements['early_years']})
@@ -1432,30 +1660,43 @@ My {display_field.lower()} story continues with {story_elements['future_emotion'
     
     def generate_generic_profession_elements(self, field: str, target_role: str) -> dict:
         """Generate generic story elements for any profession not specifically defined"""
+        
+        # Map technical field names to better narrative terms
+        field_narrative_map = {
+            'data_scientist': 'data science',
+            'software_engineer': 'software engineering', 
+            'web_developer': 'web development',
+            'mobile_developer': 'mobile development',
+            'devops_engineer': 'DevOps engineering',
+            'security_engineer': 'cybersecurity'
+        }
+        
+        # Use mapped name for narrative or clean up the original
+        narrative_field = field_narrative_map.get(field, field.replace('_', ' ').lower())
         display_field = field.replace('_', ' ').title()
         
         return {
             'emoji': '🌟',
             'title': f'{display_field.upper()} PROFESSIONAL',
-            'hook_text': f'From passion to expertise, building excellence in {display_field.lower()}',
-            'narrative_intro': f'My journey in {display_field.lower()} has been a quest for continuous improvement and meaningful impact.',
+            'hook_text': f'From passion to expertise, building excellence in {narrative_field}',
+            'narrative_intro': f'My journey in {narrative_field} has been a quest for continuous improvement and meaningful impact.',
             'driving_force': 'a passion for excellence and a commitment to making a positive difference',
-            'expertise_statement': f'Through years of dedicated practice in {display_field.lower()},',
+            'expertise_statement': f'Through years of dedicated practice in {narrative_field},',
             'field_philosophy': f'true success comes from combining technical skill with professional wisdom and ethical practice.',
             'early_years': '2020-2021',
-            'foundation_discovery': f'Discovered passion for {display_field.lower()} through hands-on experience',
-            'foundation_skills': f'Built fundamental skills in {display_field.lower()} through dedicated practice and study',
-            'foundation_achievement': f'First major success in {display_field.lower()} established confidence and direction',
+            'foundation_discovery': f'Discovered passion for {narrative_field} through hands-on experience',
+            'foundation_skills': f'Built fundamental skills in {narrative_field} through dedicated practice and study',
+            'foundation_achievement': f'First major success in {narrative_field} established confidence and direction',
             'chapter2_title': 'GROWTH',
             'growth_years': '2021-2023',
-            'growth_advancement': f'Advanced skills in {display_field.lower()} through challenging projects and mentorship',
-            'growth_specialization': f'Developed expertise in specialized areas of {display_field.lower()}',
-            'growth_breakthrough': f'Gained recognition for quality work and professional excellence in {display_field.lower()}',
+            'growth_advancement': f'Advanced skills in {narrative_field} through challenging projects and mentorship',
+            'growth_specialization': f'Developed expertise in specialized areas of {narrative_field}',
+            'growth_breakthrough': f'Gained recognition for quality work and professional excellence in {narrative_field}',
             'chapter3_title': 'MASTERY',
             'current_years': '2023-Present',
-            'current_leadership': f'Established as skilled {display_field.lower()} professional with proven track record',
-            'current_innovation': f'Leading projects and implementing innovative {display_field.lower()} practices',
-            'current_mentoring': f'Mentoring others while advancing {display_field.lower()} standards',
+            'current_leadership': f'Established as skilled {narrative_field} professional with proven track record',
+            'current_innovation': f'Leading projects and implementing innovative {narrative_field} practices',
+            'current_mentoring': f'Mentoring others while advancing {narrative_field} standards',
             'achievement1_action': f'Achieved excellence in {display_field.lower()} with',
             'achievement1_metric': 'consistent high-quality results',
             'achievement1_context': 'across multiple challenging projects',
@@ -1546,12 +1787,19 @@ OPTIMIZATION RECOMMENDATIONS:
             # Standard resume only
             results['7_enhanced_resume'] = self.create_enhanced_resume(resume_content, job_analysis, target_role, target_company)
         else:
-            # Both versions (default if invalid choice)
-            results['7_narrative_resume'] = self.create_narrative_resume(resume_content, job_analysis, target_role, target_company)
-            results['8_enhanced_resume'] = self.create_enhanced_resume(resume_content, job_analysis, target_role, target_company)
+            # Option 3: Combined version with both narrative and professional sections
+            narrative_content = self.create_narrative_resume(resume_content, job_analysis, target_role, target_company)
+            enhanced_content = self.create_enhanced_resume(resume_content, job_analysis, target_role, target_company)
+            
+            # Create a combined resume that includes both storytelling and professional elements
+            results['7_combined_resume'] = self.create_combined_resume(narrative_content, enhanced_content, target_role, target_company)
+            
+            # Also save individual versions for reference
+            results['8_narrative_only'] = narrative_content
+            results['9_enhanced_only'] = enhanced_content
         
         # Step 3: Create executive summary
-        summary_key = '8_executive_summary' if style_choice in ["1", "2"] else '9_executive_summary'
+        summary_key = '8_executive_summary' if style_choice in ["1", "2"] else '10_executive_summary'
         results[summary_key] = f"""RESUME OPTIMIZATION EXECUTIVE SUMMARY
 
 OPTIMIZATION TARGET: {target_role} at {target_company}
@@ -1606,8 +1854,15 @@ RECOMMENDED USAGE:
             '5_enhanced_skills': 'enhanced_skills_section.txt',
             '6_keyword_experience': 'keyword_enhanced_experience.txt',
             '7_narrative_resume': 'narrative_story_resume.txt',
+            '7_enhanced_resume': 'enhanced_standard_resume.txt',
+            '7_combined_resume': 'combined_comprehensive_resume.txt',
+            '8_enhanced_resume': 'enhanced_standard_resume.txt',
+            '8_narrative_only': 'narrative_only_reference.txt',
+            '9_enhanced_only': 'enhanced_only_reference.txt',
             '7_tailored_resume': 'tailored_resume_final.txt',
-            '8_executive_summary': 'optimization_executive_summary.txt'
+            '8_executive_summary': 'optimization_executive_summary.txt',
+            '9_executive_summary': 'optimization_executive_summary.txt',
+            '10_executive_summary': 'optimization_executive_summary.txt'
         }
         
         print(f"\n>>> Saving optimization results to '{output_dir}' folder:")
@@ -1625,8 +1880,45 @@ RECOMMENDED USAGE:
         
         print(f"\n>>> All files saved successfully!")
         
-        # Also create a formatted .docx resume
-        self.create_formatted_docx_resume(results, output_dir)
+        # Create formatted .docx resume(s) based on what was generated
+        if '7_combined_resume' in results:
+            # Option 3: Combined version - create one comprehensive DOCX
+            print(f"\n>>> Creating combined comprehensive DOCX file:")
+            combined_results = {k: v for k, v in results.items()}
+            combined_results['7_narrative_resume'] = results['7_combined_resume']  # Use combined content
+            self.create_formatted_docx_resume(combined_results, output_dir)
+            
+        elif '7_narrative_resume' in results and '8_enhanced_resume' in results:
+            # Legacy option 3: Both versions - create two DOCX files (should not happen with new logic)
+            print(f"\n>>> Creating DOCX files for both resume versions:")
+            
+            # Create narrative DOCX
+            narrative_results = {k: v for k, v in results.items()}
+            narrative_results['7_narrative_resume'] = results['7_narrative_resume']
+            if '8_enhanced_resume' in narrative_results:
+                del narrative_results['8_enhanced_resume']
+            
+            self.create_formatted_docx_resume_specific(narrative_results, output_dir, 'narrative_story_resume.docx')
+            
+            # Create standard DOCX 
+            standard_results = {k: v for k, v in results.items()}
+            standard_results['7_enhanced_resume'] = results['8_enhanced_resume']
+            if '7_narrative_resume' in standard_results:
+                del standard_results['7_narrative_resume']
+            
+            self.create_formatted_docx_resume_specific(standard_results, output_dir, 'enhanced_standard_resume.docx')
+            
+        elif '7_narrative_resume' in results:
+            # Option 1: Story resume only
+            self.create_formatted_docx_resume(results, output_dir)
+        elif '7_enhanced_resume' in results:
+            # Option 2: Standard resume only
+            # Map enhanced resume to expected key
+            results['7_narrative_resume'] = results['7_enhanced_resume']
+            self.create_formatted_docx_resume(results, output_dir)
+        else:
+            # Fallback - create with whatever content is available
+            self.create_formatted_docx_resume(results, output_dir)
     
     def detect_career_field(self, content: str) -> str:
         """Intelligently detect career field from job content and generate appropriate data"""
@@ -1788,9 +2080,25 @@ RECOMMENDED USAGE:
         if any(term in content for term in welding_terms):
             return 'welder'
         
-        # Software Engineering and Development fields (improved detection)
-        software_terms = ['software', 'programming', 'code', 'developer', 'development', 'programmer', 'coding']
-        if any(term in content for term in software_terms):
+        # Software Engineering and Computer Science fields (comprehensive detection)
+        software_terms = ['software', 'programming', 'code', 'developer', 'development', 'programmer', 'coding', 'computer science', 'cs']
+        data_science_terms = ['data scientist', 'data science', 'machine learning', 'ml engineer', 'ai engineer', 'data analyst', 'data engineer']
+        web_dev_terms = ['web developer', 'web development', 'frontend', 'backend', 'full stack', 'fullstack', 'javascript', 'react', 'angular', 'vue']
+        mobile_terms = ['mobile developer', 'ios developer', 'android developer', 'mobile app', 'swift', 'kotlin', 'react native', 'flutter']
+        devops_terms = ['devops', 'sre', 'site reliability', 'cloud engineer', 'infrastructure', 'kubernetes', 'docker', 'aws', 'azure', 'gcp']
+        security_terms = ['cybersecurity', 'security engineer', 'information security', 'penetration testing', 'security analyst', 'infosec']
+        
+        if any(term in content for term in data_science_terms):
+            return 'data_scientist'
+        elif any(term in content for term in web_dev_terms):
+            return 'web_developer'
+        elif any(term in content for term in mobile_terms):
+            return 'mobile_developer'
+        elif any(term in content for term in devops_terms):
+            return 'devops_engineer'
+        elif any(term in content for term in security_terms):
+            return 'security_engineer'
+        elif any(term in content for term in software_terms):
             # Check for specific software engineering roles
             if any(term in content for term in ['software engineer', 'senior software', 'full stack', 'backend', 'frontend', 'web developer', 'developer', 'programming']):
                 return 'software_engineer'
@@ -2258,6 +2566,111 @@ RECOMMENDED USAGE:
                     'Menu Innovation and Cost Analysis Project',
                     'Kitchen Leadership Excellence Recognition'
                 ]
+            },
+            'data_scientist': {
+                'education': "University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)\nValencia College — A.A., 2011 (Dean's List, GPA 3.7)",
+                'experience_title': 'Data Scientist | Machine Learning Engineer | 2022 - Present',
+                'experience_bullets': [
+                    'Developed predictive models using Python, scikit-learn, and TensorFlow achieving 85% accuracy',
+                    'Built automated data pipelines processing 1M+ records daily using pandas and Apache Spark',
+                    'Created interactive dashboards with Tableau and Power BI for executive decision making',
+                    'Implemented A/B testing frameworks resulting in 25% improvement in conversion rates'
+                ],
+                'skills': [
+                    'Programming: Python, R, SQL, Julia, Scala, MATLAB',
+                    'ML Libraries: scikit-learn, TensorFlow, PyTorch, Keras, XGBoost, pandas, NumPy',
+                    'Data Visualization: Tableau, Power BI, matplotlib, seaborn, plotly, D3.js',
+                    'Big Data: Apache Spark, Hadoop, AWS EMR, Databricks, Snowflake, Redshift'
+                ],
+                'projects': [
+                    'Customer Churn Prediction Model: https://github.com/ryan-wlr/churn-prediction',
+                    'Real-time Fraud Detection System: https://github.com/ryan-wlr/fraud-detection',
+                    'Time Series Forecasting Platform: https://github.com/ryan-wlr/time-series-forecast'
+                ]
+            },
+            'web_developer': {
+                'education': "University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)\nValencia College — A.A., 2011 (Dean's List, GPA 3.7)",
+                'experience_title': 'Full Stack Web Developer | Frontend Specialist | 2022 - Present',
+                'experience_bullets': [
+                    'Built responsive web applications using React, TypeScript, and Node.js serving 50K+ users',
+                    'Developed RESTful APIs with Django and PostgreSQL handling 10K+ requests per minute',
+                    'Optimized web performance achieving 95+ Lighthouse scores and 40% faster load times',
+                    'Implemented modern CI/CD pipelines with Docker, GitHub Actions, and AWS deployment'
+                ],
+                'skills': [
+                    'Frontend: HTML5, CSS3, JavaScript, TypeScript, React, Angular, Vue.js, Sass',
+                    'Backend: Node.js, Python, Django, Flask, Express.js, PHP, Laravel',
+                    'Databases: PostgreSQL, MongoDB, MySQL, Redis, Elasticsearch',
+                    'Tools: Git, Docker, Webpack, Babel, Jest, Cypress, AWS, Vercel'
+                ],
+                'projects': [
+                    'E-commerce Platform: https://github.com/ryan-wlr/ecommerce-platform',
+                    'Social Media Dashboard: https://github.com/ryan-wlr/social-dashboard',
+                    'Real-time Chat Application: https://github.com/ryan-wlr/realtime-chat'
+                ]
+            },
+            'mobile_developer': {
+                'education': "University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)\nValencia College — A.A., 2011 (Dean's List, GPA 3.7)",
+                'experience_title': 'Mobile App Developer | iOS & Android Specialist | 2022 - Present',
+                'experience_bullets': [
+                    'Developed native iOS apps using Swift and SwiftUI with 100K+ downloads on App Store',
+                    'Built cross-platform apps with React Native and Flutter supporting iOS and Android',
+                    'Integrated Firebase services for authentication, real-time database, and push notifications',
+                    'Optimized app performance achieving 4.8+ star ratings and 99.9% crash-free sessions'
+                ],
+                'skills': [
+                    'Mobile Languages: Swift, Kotlin, Dart, Java, Objective-C, JavaScript',
+                    'Frameworks: SwiftUI, UIKit, Jetpack Compose, React Native, Flutter, Xamarin',
+                    'Tools: Xcode, Android Studio, Firebase, App Center, Fastlane, TestFlight',
+                    'Backend: Node.js, Python, REST APIs, GraphQL, Push Notifications'
+                ],
+                'projects': [
+                    'Fitness Tracking App: https://github.com/ryan-wlr/fitness-tracker',
+                    'Recipe Sharing Platform: https://github.com/ryan-wlr/recipe-app',
+                    'Location-based Social App: https://github.com/ryan-wlr/location-social'
+                ]
+            },
+            'devops_engineer': {
+                'education': "University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)\nValencia College — A.A., 2011 (Dean's List, GPA 3.7)",
+                'experience_title': 'DevOps Engineer | Cloud Infrastructure Specialist | 2022 - Present',
+                'experience_bullets': [
+                    'Designed and maintained AWS infrastructure supporting 1M+ users with 99.99% uptime',
+                    'Automated deployment pipelines using Docker, Kubernetes, and Terraform reducing deploy time by 80%',
+                    'Implemented monitoring and alerting systems with Prometheus, Grafana, and ELK stack',
+                    'Managed CI/CD workflows with Jenkins and GitLab CI processing 500+ deployments per month'
+                ],
+                'skills': [
+                    'Cloud Platforms: AWS, Azure, Google Cloud Platform, DigitalOcean',
+                    'Containerization: Docker, Kubernetes, Docker Compose, Helm, Istio',
+                    'Infrastructure: Terraform, Ansible, CloudFormation, Pulumi, Vagrant',
+                    'Monitoring: Prometheus, Grafana, ELK Stack, Datadog, New Relic, PagerDuty'
+                ],
+                'projects': [
+                    'Auto-scaling Kubernetes Cluster: https://github.com/ryan-wlr/k8s-autoscale',
+                    'Infrastructure as Code Templates: https://github.com/ryan-wlr/terraform-modules',
+                    'CI/CD Pipeline Framework: https://github.com/ryan-wlr/cicd-framework'
+                ]
+            },
+            'security_engineer': {
+                'education': "University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)\nValencia College — A.A., 2011 (Dean's List, GPA 3.7)",
+                'experience_title': 'Cybersecurity Engineer | Security Analyst | 2022 - Present',
+                'experience_bullets': [
+                    'Conducted penetration testing and vulnerability assessments identifying 200+ security issues',
+                    'Implemented security monitoring systems using SIEM tools reducing incident response time by 60%',
+                    'Developed security automation scripts with Python and PowerShell for threat detection',
+                    'Led incident response efforts for 50+ security events achieving 100% containment success rate'
+                ],
+                'skills': [
+                    'Security Tools: Metasploit, Nmap, Wireshark, Burp Suite, OWASP ZAP, Nessus',
+                    'Programming: Python, PowerShell, Bash, C++, Assembly, Go, Rust',
+                    'SIEM Platforms: Splunk, QRadar, ArcSight, Elastic Security, Chronicle',
+                    'Compliance: ISO 27001, NIST Framework, SOX, HIPAA, GDPR, PCI DSS'
+                ],
+                'projects': [
+                    'Automated Penetration Testing Suite: https://github.com/ryan-wlr/pentest-automation',
+                    'Threat Intelligence Platform: https://github.com/ryan-wlr/threat-intel',
+                    'Security Monitoring Dashboard: https://github.com/ryan-wlr/security-dashboard'
+                ]
             }
         }
         
@@ -2530,6 +2943,56 @@ RECOMMENDED USAGE:
         except Exception as e:
             print(f"ERROR: Error creating .docx resume: {e}")
     
+    def create_formatted_docx_resume_specific(self, results: Dict[str, str], output_dir: str, filename: str):
+        """Create a properly formatted .docx resume with specific filename"""
+        if not HAS_DOCX:
+            print("WARNING: Skipping .docx creation - python-docx not available")
+            return
+        
+        try:
+            # Create new document
+            doc = Document()
+            
+            # Set up document margins to match original
+            sections = doc.sections
+            for section in sections:
+                section.top_margin = Inches(0.5)
+                section.bottom_margin = Inches(0.5)
+                section.left_margin = Inches(0.7)
+                section.right_margin = Inches(0.7)
+            
+            # Use the previously detected field from mock_response
+            detected_field = getattr(self, 'current_detected_field', 'software_engineer')
+            field_data = self.get_field_data(detected_field)
+            
+            print(f"    >>> Detected field: {detected_field}")
+            
+            # Check if narrative resume exists (storytelling mode)
+            if '7_narrative_resume' in results:
+                print(f"    >>> Using narrative storytelling content")
+                narrative_content = results['7_narrative_resume']
+                # Create storytelling DOCX format
+                self.build_narrative_docx(doc, narrative_content)
+            elif '7_enhanced_resume' in results:
+                print(f"    >>> Using enhanced standard content")
+                # For standard resumes, we need to create content differently
+                # Since enhanced resume is typically text, we'll use standard format
+                field_data = self.get_field_data(detected_field)
+                self.build_standard_docx(doc, field_data, results, detected_field)
+            else:
+                print(f"    >>> Using {detected_field}-specific resume content")
+                field_data = self.get_field_data(detected_field)
+                # Create standard DOCX format
+                self.build_standard_docx(doc, field_data, results, detected_field)
+            
+            # Save the document with custom filename
+            docx_path = os.path.join(output_dir, filename)
+            doc.save(docx_path)
+            print(f"    >>> {filename} (Ryan Weiler format)")
+            
+        except Exception as e:
+            print(f"ERROR: Error creating .docx resume: {e}")
+    
     def add_hyperlink(self, paragraph, url, text):
         """Add a clickable hyperlink to a paragraph"""
         # Create hyperlink relationship
@@ -2741,7 +3204,7 @@ RECOMMENDED USAGE:
         edu_run.font.name = 'Calibri'
         edu_run.font.size = Pt(14)
         
-        # Use extracted education from narrative, or fallback to default
+        # Use extracted education from narrative, or fallback to field data
         if sections['education']:
             for edu_line in sections['education']:
                 edu_para = doc.add_paragraph()
@@ -2750,10 +3213,12 @@ RECOMMENDED USAGE:
                 edu_run.font.name = 'Calibri'
                 edu_run.font.size = Pt(12)
         else:
-            # Fallback to default education
+            # Fallback to actual field data instead of hardcoded education
+            detected_field = getattr(self, 'current_detected_field', 'data_scientist')
+            field_data = self.get_field_data(detected_field)
             edu_para = doc.add_paragraph()
             edu_para.style = doc.styles['Normal']
-            edu_run = edu_para.add_run("Florida Atlantic University — B.S. Computer Science, Expected 2024 (Dean's List, GPA 3.7)")
+            edu_run = edu_para.add_run(field_data['education'])
             edu_run.font.name = 'Calibri'
             edu_run.font.size = Pt(12)
         doc.add_paragraph()
@@ -2842,13 +3307,8 @@ RECOMMENDED USAGE:
                 'bullets': field_data['experience_bullets']
             },
             {
-                'title': f"{field_data['experience_title'].split('|')[0].strip()} Technician | Florida Atlantic University Facilities | 2021 - 2022",
-                'bullets': [
-                    f"Supported campus-wide {detected_field} operations and maintenance across multiple facilities",
-                    f"Assisted with installation and system upgrades related to {detected_field} work",
-                    f"Performed preventive maintenance and collaborated with facilities team on repairs",
-                    f"Maintained accurate documentation and followed safety protocols"
-                ]
+                'title': "University Projects & Research",
+                'bullets': field_data['projects']
             }
         ]
         

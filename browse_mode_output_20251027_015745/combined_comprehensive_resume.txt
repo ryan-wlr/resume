@@ -1,0 +1,58 @@
+COMPREHENSIVE CAREER RESUME - DATA SCIENTIST
+
+🌟 THE DATA SCIENTIST PROFESSIONAL: From passion to expertise, building excellence in data science
+
+RYAN THOMAS WEILER
+data scientist Professional
+
+CONTACT INFORMATION:
+📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com
+🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr
+
+PROFESSIONAL SUMMARY:
+Results-driven data scientist professional with proven expertise in Python, R, SQL, Julia. Demonstrated track record of delivering high-impact solutions and driving measurable results in fast-paced environments. Seeking to leverage technical excellence and leadership capabilities as data scientist at Agnitron Technology, Inc.
+
+CAREER NARRATIVE & VISION:
+My journey in data science has been a quest for continuous improvement and meaningful impact. Driven by a passion for excellence and a commitment to making a positive difference, Through years of dedicated practice in data science, I understand that true success comes from combining technical skill with professional wisdom and ethical practice.
+
+CORE TECHNICAL COMPETENCIES:
+• Programming: Python, R, SQL, Julia, Scala, MATLAB
+• ML Libraries: scikit-learn, TensorFlow, PyTorch, Keras, XGBoost, pandas, NumPy
+• Data Visualization: Tableau, Power BI, matplotlib, seaborn, plotly, D3.js
+• Big Data: Apache Spark, Hadoop, AWS EMR, Databricks, Snowflake, Redshift
+
+SIGNATURE ACHIEVEMENTS:
+• Achieved excellence in data scientist with consistent high-quality results across multiple challenging projects
+• Improved efficiency by 25% through innovative data scientist practices
+• Led successful projects that advanced data scientist standards and organizational capabilities
+• Mentored others and contributed to data scientist community growth through knowledge sharing and collaboration
+
+PROFESSIONAL EXPERIENCE:
+• Developed predictive models using Python, scikit-learn, and TensorFlow achieving 85% accuracy
+• Built automated data pipelines processing 1M+ records daily using pandas and Apache Spark
+• Created interactive dashboards with Tableau and Power BI for executive decision making
+• Implemented A/B testing frameworks resulting in 25% improvement in conversion rates
+
+KEY PROJECTS & INNOVATIONS:
+• Excellence Initiative: Demonstrated mastery of data scientist best practices
+• Innovation Project: Developed new approaches improving data scientist outcomes
+• Leadership Challenge: Successfully guided team through complex data scientist project
+• Community Impact: Contributed expertise to advance data scientist field
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+PROFESSIONAL DEVELOPMENT:
+• Continuous learning in data scientist technologies and methodologies
+• Active participation in professional development and industry conferences
+• Commitment to staying current with emerging trends and best practices
+• Leadership development through mentoring and cross-functional collaboration
+
+FUTURE VISION:
+Leveraging proven expertise and innovative problem-solving to drive meaningful impact as data scientist at Agnitron Technology, Inc, 
+while continuing to grow professionally and contribute to organizational success through technical excellence and leadership.
+
+---
+This comprehensive resume combines compelling career storytelling with detailed professional qualifications,
+optimized for both ATS systems and human recruiters seeking data scientist candidates.
