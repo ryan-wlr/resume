@@ -1,0 +1,28 @@
+ATS-OPTIMIZED RESUME VERSION:
+
+RYAN THOMAS WEILER
+Data Scientist
+
+TECHNICAL SKILLS:
+Programming: Python, R, SQL, Julia, Scala, MATLAB
+ML Libraries: scikit-learn, TensorFlow, PyTorch, Keras, XGBoost, pandas, NumPy
+Data Visualization: Tableau, Power BI, matplotlib, seaborn, plotly, D3.js
+Big Data: Apache Spark, Hadoop, AWS EMR, Databricks, Snowflake, Redshift
+
+PROFESSIONAL EXPERIENCE:
+Data Scientist | Machine Learning Engineer | 2022 - Present
+• Developed predictive models using Python, scikit-learn, and TensorFlow achieving 85% accuracy
+• Built automated data pipelines processing 1M+ records daily using pandas and Apache Spark
+• Created interactive dashboards with Tableau and Power BI for executive decision making
+• Implemented A/B testing frameworks resulting in 25% improvement in conversion rates
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+CERTIFICATIONS & ACHIEVEMENTS:
+• Customer Churn Prediction Model: https://github.com/ryan-wlr/churn-prediction
+• Real-time Fraud Detection System: https://github.com/ryan-wlr/fraud-detection
+• Time Series Forecasting Platform: https://github.com/ryan-wlr/time-series-forecast
+
+This ATS-optimized version incorporates relevant keywords and proper formatting to maximize compatibility with applicant tracking systems while maintaining readability for human reviewers.

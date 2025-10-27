@@ -290,6 +290,7 @@ class ResumeOptimizer:
             'mechanic': ['Automotive Repair', 'Vehicle Maintenance', 'Diagnostic Equipment', 'ASE Certification'],
             'software_engineer': ['Software Development', 'Technology Solutions', 'System Architecture', 'Code Quality'],
             'data_scientist': ['Data Science', 'Machine Learning', 'Analytics', 'Business Intelligence'],
+            'machine_learning_engineer': ['Machine Learning Engineering', 'AI Development', 'ML Operations', 'Production ML'],
             'web_developer': ['Web Development', 'Frontend Development', 'Backend Development', 'Full Stack'],
             'mobile_developer': ['Mobile Development', 'iOS Development', 'Android Development', 'Mobile Apps'],
             'devops_engineer': ['DevOps', 'Cloud Infrastructure', 'CI/CD', 'System Administration'],
@@ -344,6 +345,7 @@ class ResumeOptimizer:
             'chef': 'Executive Chef & Culinary Professional',
             'software_engineer': 'Software Engineer | Python Developer | Financial Technology Specialist',
             'data_scientist': 'Data Scientist | Machine Learning Engineer | Analytics Specialist',
+            'machine_learning_engineer': 'Machine Learning Engineer | AI Developer | MLOps Specialist',
             'web_developer': 'Full Stack Web Developer | Frontend & Backend Specialist',
             'mobile_developer': 'Mobile App Developer | iOS & Android Specialist',
             'devops_engineer': 'DevOps Engineer | Cloud Infrastructure Specialist',
@@ -364,6 +366,7 @@ class ResumeOptimizer:
             'chef': 'Experienced Executive Chef with 3+ years of comprehensive culinary expertise in menu development, kitchen management, and high-volume food service operations. Proven expertise in culinary techniques, staff supervision, and cost control with demonstrated ability to increase restaurant revenue by 25% through innovative menu creation. Strong knowledge of food safety regulations, kitchen operations, and culinary arts. Committed to delivering exceptional dining experiences through creative cuisine and efficient kitchen leadership.',
             'software_engineer': 'Dedicated Software Engineer with 3+ years of experience developing innovative financial technology solutions and automated trading systems. Proven expertise in Python development, machine learning applications, and algorithmic trading with demonstrated results including 25% portfolio performance improvement. Strong background in full-stack development, database optimization, and collaborative software engineering practices. Passionate about leveraging cutting-edge technology to solve complex financial and business challenges.',
             'data_scientist': 'Experienced Data Scientist with 3+ years of expertise in machine learning, statistical analysis, and big data processing. Proven expertise in Python, R, and SQL with demonstrated ability to improve business outcomes by 30% through predictive modeling and data-driven insights. Strong background in TensorFlow, scikit-learn, and cloud platforms. Committed to transforming complex datasets into actionable business intelligence and strategic recommendations.',
+            'machine_learning_engineer': 'Expert Machine Learning Engineer with 3+ years of experience building and deploying production ML systems at scale. Proven expertise in MLOps, deep learning, and distributed computing with demonstrated ability to reduce model inference time by 60% and achieve 99.9% uptime. Strong background in TensorFlow, PyTorch, Kubernetes, and cloud platforms. Committed to bridging the gap between research and production through robust, scalable ML engineering solutions.',
             'web_developer': 'Skilled Full Stack Web Developer with 3+ years of experience building responsive web applications and scalable backend systems. Proven expertise in JavaScript, TypeScript, React, and Node.js with demonstrated ability to improve application performance by 40% through optimization techniques. Strong background in modern web technologies, RESTful APIs, and database design. Passionate about creating exceptional user experiences and efficient development workflows.',
             'mobile_developer': 'Expert Mobile App Developer with 3+ years of experience creating native and cross-platform applications for iOS and Android. Proven expertise in Swift, Kotlin, and React Native with demonstrated success achieving 4.8+ star ratings and 100K+ downloads. Strong background in mobile UI/UX design, performance optimization, and app store deployment. Committed to delivering innovative mobile solutions that enhance user engagement and drive business growth.',
             'devops_engineer': 'Skilled DevOps Engineer with 3+ years of experience designing and implementing cloud infrastructure and CI/CD pipelines. Proven expertise in AWS, Docker, and Kubernetes with demonstrated ability to reduce deployment time by 80% and improve system reliability to 99.99% uptime. Strong background in infrastructure as code, monitoring, and security best practices. Passionate about automating workflows and enabling efficient software delivery.',
@@ -1304,6 +1307,7 @@ meaningful impact, and unwavering commitment to excellence in {detected_field.re
             'quantum_computing_scientist': f"🌟 THE QUANTUM PIONEER: {resume_info['name'].title()}'s journey from curiosity about quantum mechanics to breakthrough research",
             'mathematics_professor': f"📐 THE MATHEMATICAL STORYTELLER: {resume_info['name'].title()}'s quest to unlock the universe's mathematical secrets",
             'data_scientist': f"📊 THE DATA DETECTIVE: {resume_info['name'].title()}'s mission to find insights hidden in complex datasets",
+            'machine_learning_engineer': f"🤖 THE ML ARCHITECT: {resume_info['name'].title()}'s journey building intelligent systems that learn and adapt",
             'generic': f"🌟 THE {field_display.upper()} PROFESSIONAL: {resume_info['name'].title()}'s journey of growth and impact in {field_display.lower()}"
         }
         
@@ -1664,6 +1668,7 @@ My {display_field.lower()} story continues with {story_elements['future_emotion'
         # Map technical field names to better narrative terms
         field_narrative_map = {
             'data_scientist': 'data science',
+            'machine_learning_engineer': 'machine learning engineering',
             'software_engineer': 'software engineering', 
             'web_developer': 'web development',
             'mobile_developer': 'mobile development',
@@ -2082,13 +2087,20 @@ RECOMMENDED USAGE:
         
         # Software Engineering and Computer Science fields (comprehensive detection)
         software_terms = ['software', 'programming', 'code', 'developer', 'development', 'programmer', 'coding', 'computer science', 'cs']
-        data_science_terms = ['data scientist', 'data science', 'machine learning', 'ml engineer', 'ai engineer', 'data analyst', 'data engineer']
+        ml_engineer_terms = ['machine learning engineer', 'ml engineer', 'machine learning developer', 'ai engineer', 'ai developer', 'deep learning engineer', 'machine learning scientist', 'ml scientist']
+        data_science_terms = ['data scientist', 'data science', 'data analyst', 'data engineer']
         web_dev_terms = ['web developer', 'web development', 'frontend', 'backend', 'full stack', 'fullstack', 'javascript', 'react', 'angular', 'vue']
         mobile_terms = ['mobile developer', 'ios developer', 'android developer', 'mobile app', 'swift', 'kotlin', 'react native', 'flutter']
         devops_terms = ['devops', 'sre', 'site reliability', 'cloud engineer', 'infrastructure', 'kubernetes', 'docker', 'aws', 'azure', 'gcp']
         security_terms = ['cybersecurity', 'security engineer', 'information security', 'penetration testing', 'security analyst', 'infosec']
         
-        if any(term in content for term in data_science_terms):
+        # Check for ML engineer first (more specific than general ML terms)
+        if any(term in content for term in ml_engineer_terms):
+            return 'machine_learning_engineer'
+        # Check for standalone "machine learning" terms
+        elif 'machine learning' in content and ('engineer' in content or 'developer' in content or 'position' in content or 'role' in content or 'job' in content):
+            return 'machine_learning_engineer'
+        elif any(term in content for term in data_science_terms):
             return 'data_scientist'
         elif any(term in content for term in web_dev_terms):
             return 'web_developer'
@@ -2586,6 +2598,27 @@ RECOMMENDED USAGE:
                     'Customer Churn Prediction Model: https://github.com/ryan-wlr/churn-prediction',
                     'Real-time Fraud Detection System: https://github.com/ryan-wlr/fraud-detection',
                     'Time Series Forecasting Platform: https://github.com/ryan-wlr/time-series-forecast'
+                ]
+            },
+            'machine_learning_engineer': {
+                'education': "University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)\nValencia College — A.A., 2011 (Dean's List, GPA 3.7)",
+                'experience_title': 'Machine Learning Engineer | AI Developer | 2022 - Present',
+                'experience_bullets': [
+                    'Designed and deployed ML models to production serving 1M+ predictions daily with 99.9% uptime',
+                    'Built end-to-end ML pipelines using MLflow, Kubeflow, and Apache Airflow for automated training',
+                    'Optimized deep learning models reducing inference time by 60% using TensorRT and model quantization',
+                    'Implemented real-time feature engineering and model monitoring systems with DataDog and Prometheus'
+                ],
+                'skills': [
+                    'ML Frameworks: TensorFlow, PyTorch, scikit-learn, XGBoost, LightGBM, Keras, JAX',
+                    'Programming: Python, C++, Java, Scala, SQL, Go, R, Julia',
+                    'MLOps: MLflow, Kubeflow, Apache Airflow, Docker, Kubernetes, Git, CI/CD',
+                    'Cloud & Infrastructure: AWS SageMaker, GCP AI Platform, Azure ML, Apache Spark, Hadoop'
+                ],
+                'projects': [
+                    'Production ML Pipeline: https://github.com/ryan-wlr/ml-production-pipeline',
+                    'Computer Vision Model Deployment: https://github.com/ryan-wlr/cv-model-deploy',
+                    'AutoML Framework: https://github.com/ryan-wlr/automl-framework'
                 ]
             },
             'web_developer': {

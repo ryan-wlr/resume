@@ -1,0 +1,28 @@
+ATS-OPTIMIZED RESUME VERSION:
+
+RYAN THOMAS WEILER
+Machine Learning Engineer
+
+TECHNICAL SKILLS:
+ML Frameworks: TensorFlow, PyTorch, scikit-learn, XGBoost, LightGBM, Keras, JAX
+Programming: Python, C++, Java, Scala, SQL, Go, R, Julia
+MLOps: MLflow, Kubeflow, Apache Airflow, Docker, Kubernetes, Git, CI/CD
+Cloud & Infrastructure: AWS SageMaker, GCP AI Platform, Azure ML, Apache Spark, Hadoop
+
+PROFESSIONAL EXPERIENCE:
+Machine Learning Engineer | AI Developer | 2022 - Present
+• Designed and deployed ML models to production serving 1M+ predictions daily with 99.9% uptime
+• Built end-to-end ML pipelines using MLflow, Kubeflow, and Apache Airflow for automated training
+• Optimized deep learning models reducing inference time by 60% using TensorRT and model quantization
+• Implemented real-time feature engineering and model monitoring systems with DataDog and Prometheus
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+CERTIFICATIONS & ACHIEVEMENTS:
+• Production ML Pipeline: https://github.com/ryan-wlr/ml-production-pipeline
+• Computer Vision Model Deployment: https://github.com/ryan-wlr/cv-model-deploy
+• AutoML Framework: https://github.com/ryan-wlr/automl-framework
+
+This ATS-optimized version incorporates relevant keywords and proper formatting to maximize compatibility with applicant tracking systems while maintaining readability for human reviewers.

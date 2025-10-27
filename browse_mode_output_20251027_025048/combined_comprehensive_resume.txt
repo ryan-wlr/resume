@@ -1,0 +1,58 @@
+COMPREHENSIVE CAREER RESUME - MACHINE LEARNING ENGINEER
+
+🌟 THE MACHINE LEARNING ENGINEER PROFESSIONAL: From passion to expertise, building excellence in machine learning engineering
+
+RYAN THOMAS WEILER
+machine learning engineer Professional
+
+CONTACT INFORMATION:
+📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com
+🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr
+
+PROFESSIONAL SUMMARY:
+Results-driven machine learning engineer professional with proven expertise in TensorFlow, PyTorch, scikit-learn, XGBoost. Demonstrated track record of delivering high-impact solutions and driving measurable results in fast-paced environments. Seeking to leverage technical excellence and leadership capabilities as machine learning engineer at nestle.
+
+CAREER NARRATIVE & VISION:
+My journey in machine learning engineering has been a quest for continuous improvement and meaningful impact. Driven by a passion for excellence and a commitment to making a positive difference, Through years of dedicated practice in machine learning engineering, I understand that true success comes from combining technical skill with professional wisdom and ethical practice.
+
+CORE TECHNICAL COMPETENCIES:
+• ML Frameworks: TensorFlow, PyTorch, scikit-learn, XGBoost, LightGBM, Keras, JAX
+• Programming: Python, C++, Java, Scala, SQL, Go, R, Julia
+• MLOps: MLflow, Kubeflow, Apache Airflow, Docker, Kubernetes, Git, CI/CD
+• Cloud & Infrastructure: AWS SageMaker, GCP AI Platform, Azure ML, Apache Spark, Hadoop
+
+SIGNATURE ACHIEVEMENTS:
+• Achieved excellence in machine learning engineer with consistent high-quality results across multiple challenging projects
+• Improved efficiency by 25% through innovative machine learning engineer practices
+• Led successful projects that advanced machine learning engineer standards and organizational capabilities
+• Mentored others and contributed to machine learning engineer community growth through knowledge sharing and collaboration
+
+PROFESSIONAL EXPERIENCE:
+• Designed and deployed ML models to production serving 1M+ predictions daily with 99.9% uptime
+• Built end-to-end ML pipelines using MLflow, Kubeflow, and Apache Airflow for automated training
+• Optimized deep learning models reducing inference time by 60% using TensorRT and model quantization
+• Implemented real-time feature engineering and model monitoring systems with DataDog and Prometheus
+
+KEY PROJECTS & INNOVATIONS:
+• Excellence Initiative: Demonstrated mastery of machine learning engineer best practices
+• Innovation Project: Developed new approaches improving machine learning engineer outcomes
+• Leadership Challenge: Successfully guided team through complex machine learning engineer project
+• Community Impact: Contributed expertise to advance machine learning engineer field
+
+EDUCATION:
+University of Central Florida — B.S. Computer Science, 2013 (Dean's List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean's List, GPA 3.7)
+
+PROFESSIONAL DEVELOPMENT:
+• Continuous learning in machine learning engineer technologies and methodologies
+• Active participation in professional development and industry conferences
+• Commitment to staying current with emerging trends and best practices
+• Leadership development through mentoring and cross-functional collaboration
+
+FUTURE VISION:
+Leveraging proven expertise and innovative problem-solving to drive meaningful impact as machine learning engineer at nestle, 
+while continuing to grow professionally and contribute to organizational success through technical excellence and leadership.
+
+---
+This comprehensive resume combines compelling career storytelling with detailed professional qualifications,
+optimized for both ATS systems and human recruiters seeking machine learning engineer candidates.
