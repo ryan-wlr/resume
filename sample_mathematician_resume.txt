@@ -1,0 +1,49 @@
+Ryan Thomas Weiler
+Research Mathematician
+
+Contact Information:
+Phone: (561) 906-2118
+Email: ryan_wlr@yahoo.com
+LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/
+
+Education:
+Ph.D. in Pure Mathematics (Algebraic Geometry)
+Princeton University, Princeton, NJ | 2020
+Dissertation: "Cohomological Methods in Arithmetic Geometry"
+Advisor: Professor A. Distinguished
+
+M.S. in Mathematics
+Massachusetts Institute of Technology, Cambridge, MA | 2017
+GPA: 3.9/4.0
+
+B.S. in Mathematics and Physics (Summa Cum Laude)
+Harvard University, Cambridge, MA | 2015
+Phi Beta Kappa, Magna Cum Laude
+
+Research Experience:
+Postdoctoral Researcher | Institute for Advanced Study | 2020 - Present
+- Investigating connections between algebraic K-theory and motivic cohomology
+- Developed new computational techniques for étale cohomology calculations
+- Collaborated on breakthrough results in arithmetic geometry
+
+Graduate Research Assistant | Princeton University | 2017 - 2020
+- Proved fundamental theorems in algebraic geometry using derived categories
+- Advanced understanding of intersection theory on algebraic varieties
+- Contributed to resolution of conjectures in Hodge theory
+
+Publications:
+- "Motivic Cohomology and Algebraic Cycles" - Annals of Mathematics (2021)
+- "Derived Categories in Arithmetic Geometry" - Inventiones Mathematicae (2020)
+- "Spectral Sequences and K-Theory" - Journal of Pure and Applied Algebra (2019)
+
+Technical Skills:
+- Advanced Mathematics: Algebraic Geometry, Homological Algebra, Category Theory
+- Computational: SageMath, Magma, Macaulay2, LaTeX, Mathematica
+- Programming: Python, C++, Mathematical computation and visualization
+- Languages: English (Native), French (Fluent), German (Conversational)
+
+Awards and Honors:
+- NSF Mathematical Sciences Postdoctoral Research Fellowship (2020)
+- Princeton University Excellence in Teaching Award (2019)
+- Phi Beta Kappa (2015)
+- Harvard University Dean's List (2013-2015)

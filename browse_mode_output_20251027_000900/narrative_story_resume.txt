@@ -1,0 +1,61 @@
+CAREER STORY RESUME - OPTICAL ENGINEER
+
+🔬 THE LIGHT ARCHITECT: Engineering the future through precision optics and photonic innovation
+
+RYAN THOMAS WEILER
+Optical Engineer Professional
+
+CONTACT INFORMATION:
+📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com
+🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr
+University of Central Florida — B.S. Computer Science, 2013 (Dean’s List, GPA 3.8)
+Valencia College — A.A., 2011 (Dean’s List, GPA 3.7)
+Experience & Projects (Continuous Timeline)
+- Built, trained, and deployed neural networks (CNNs for vision; RNNs/Transformers for NLP).
+- Project Link (Colab): https://colab.research.google.com/drive/1oXYW-Be0KpBPTthnUUtmOhBAyIp3PYOS?usp=sharing
+
+PROFESSIONAL NARRATIVE:
+Light has always been my medium of choice for solving complex engineering challenges. My journey in optical engineer has been driven by the elegant physics of photonics and the endless possibilities that emerge when light is precisely controlled. From designing laser systems to developing fiber optic communications, I understand that optical technologies can transform industries and improve lives through precise light manipulation.
+
+CAREER JOURNEY & IMPACT STORY:
+
+Chapter 1: THE FOUNDATION (Early Career)
+• Developed fascination with optical physics and precision engineering
+• Mastered fundamentals of laser systems, fiber optics, and optical design
+• Built first optical prototypes, discovering the art of light manipulation
+
+Chapter 2: THE PRECISION (Skill Development)
+• Advanced expertise in optical modeling using Zemax and Code V
+• Designed complex optical systems for telecommunications and defense applications
+• Achieved breakthrough performance improvements in fiber optic transmission
+
+Chapter 3: THE INNOVATION (Current Focus)
+• Leading development of next-generation photonic devices and systems
+• Pioneering new approaches to optical design and laser technology
+• Mentoring teams while pushing boundaries of optical engineering
+
+KEY ACHIEVEMENTS THAT DEFINE MY STORY:
+• Designed revolutionary laser systems improving efficiency by 40% over industry standards
+• Developed fiber optic communication systems enabling 10Gbps data transmission with ultra-low latency performance
+• Led optical modeling projects resulting in 25% cost reduction through design optimization
+• Pioneered precision optical assemblies with sub-micron alignment tolerances for critical aerospace applications
+
+TECHNICAL EXPERTISE DEVELOPED THROUGH MY JOURNEY:
+• Technology expertise
+• Problem solving
+• Innovation
+
+EDUCATION THAT SHAPED MY PATH:
+Relevant education in optical engineer
+
+DEFINING PROJECTS & MILESTONES:
+• Photonic Revolution: Next-generation laser diode systems for telecommunications
+• Precision Optics Platform: Advanced optical design reducing manufacturing costs
+• Fiber Network Innovation: High-speed optical communication system design
+• Laser Safety Initiative: Comprehensive optical safety protocols and training programs
+
+FUTURE VISION:
+My optical engineer story continues with enthusiasm for the opportunities at nasa. I envision applying proven expertise in laser systems, fiber optics, and precision optical design while developing breakthrough photonic solutions that advance the field and drive technological innovation.
+
+This resume tells the story of a professional journey marked by continuous growth, 
+meaningful impact, and unwavering commitment to excellence in optical engineer.

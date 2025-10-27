@@ -1,0 +1,31 @@
+ATS-OPTIMIZED RESUME VERSION:
+
+RYAN THOMAS WEILER
+Quantum Computing Research Scientist
+
+TECHNICAL SKILLS:
+Quantum Algorithms: Shor's Algorithm, Grover's Algorithm, VQE, QAOA, Quantum Machine Learning
+Programming: Qiskit, Cirq, PennyLane, Q#, Python, MATLAB, Mathematica, Julia
+Mathematics: Linear Algebra, Group Theory, Tensor Networks, Information Theory, Optimization
+Hardware: Superconducting Qubits, Trapped Ions, Photonic Systems, NISQ Devices
+Research: Quantum Error Correction, Fault-Tolerant Computing, Quantum Simulation, Cryptography
+
+PROFESSIONAL EXPERIENCE:
+Quantum Computing Research Scientist | Quantum Information Lab | 2020 - Present
+• Developed novel quantum algorithms for optimization problems, achieving quadratic speedup over classical methods
+• Implemented variational quantum eigensolvers (VQE) for molecular simulation with 99.9% accuracy
+• Published 15+ papers in top-tier journals including Nature Quantum Information and Physical Review Letters
+• Led quantum error correction research resulting in 50% reduction in logical error rates for surface codes
+
+EDUCATION:
+Massachusetts Institute of Technology — Ph.D. in Quantum Information Science, 2020
+California Institute of Technology — M.S. in Physics, 2017
+Harvard University — B.S. in Physics and Mathematics (Summa Cum Laude), 2015
+
+CERTIFICATIONS & ACHIEVEMENTS:
+• Quantum Supremacy Demonstration: Led team achieving quantum advantage for random circuit sampling
+• Quantum Chemistry Simulation: Developed VQE algorithms for drug discovery applications
+• Error Correction Breakthrough: Designed new topological codes with threshold above 1%
+• Quantum Machine Learning: Created quantum neural networks for pattern recognition tasks
+
+This ATS-optimized version incorporates relevant keywords and proper formatting to maximize compatibility with applicant tracking systems while maintaining readability for human reviewers.

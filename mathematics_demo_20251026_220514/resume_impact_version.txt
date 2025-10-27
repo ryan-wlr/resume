@@ -1,0 +1,38 @@
+ENHANCED RESUME - MAXIMUM IMPACT VERSION:
+
+RYAN THOMAS WEILER
+Professor of Mathematics & Research Mathematician
+
+CONTACT INFORMATION:
+Phone: (561) 906-2118 | Email: ryan_wlr@yahoo.com
+LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/
+
+PROFESSIONAL SUMMARY:
+Accomplished Mathematics Professor with 7+ years of research excellence in pure mathematics, specializing in algebraic geometry, homological algebra, and arithmetic geometry. Proven expertise in solving fundamental problems using advanced cohomological methods, developing new theoretical frameworks in K-theory and motivic cohomology, and mentoring 12+ graduate students to Ph.D. completion. Strong publication record in Annals of Mathematics and Inventiones Mathematicae. Committed to advancing mathematical knowledge through rigorous proof techniques and innovative research approaches.
+
+CORE TECHNICAL COMPETENCIES:
+Pure Mathematics: Algebraic Geometry, Homological Algebra, Category Theory, Number Theory
+Analysis: Real/Complex Analysis, Functional Analysis, Harmonic Analysis, Differential Geometry
+Algebra: Commutative Algebra, Representation Theory, Lie Algebras, Algebraic Topology
+Computational: SageMath, Magma, GAP, Macaulay2, LaTeX, TikZ, Proof Assistants (Lean, Coq)
+Research: Spectral Sequences, Derived Categories, Sheaf Cohomology, Modular Forms
+
+PROFESSIONAL EXPERIENCE:
+Assistant Professor of Mathematics | Research University | 2020 - Present
+• Proved fundamental theorems in algebraic geometry, published in Annals of Mathematics and Inventiones
+• Developed new techniques in homological algebra advancing K-theory and motivic cohomology
+• Solved longstanding conjectures in arithmetic geometry using advanced cohomological methods
+• Mentored 12+ graduate students and postdocs, with 8 completing Ph.D. dissertations under supervision
+
+EDUCATION:
+Princeton University — Ph.D. in Pure Mathematics (Algebraic Geometry), 2018
+Massachusetts Institute of Technology — M.S. in Mathematics, 2015
+Harvard University — B.A. in Mathematics (Phi Beta Kappa), 2013
+
+KEY PROJECTS & CERTIFICATIONS:
+• Breakthrough in Langlands Program: Established new cases of geometric Langlands correspondence
+• Cohomology Theory Advancement: Developed new computational tools for étale cohomology
+• Arithmetic Geometry Research: Proved rationality results for certain classes of algebraic varieties
+• NSF CAREER Award: $500K grant for research in motivic homotopy theory and A¹-algebraic topology
+
+This optimized resume strategically aligns your background with the target role requirements, incorporating industry-specific keywords and quantifiable achievements that will resonate with hiring managers and pass ATS screening systems.

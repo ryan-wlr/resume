@@ -1,0 +1,38 @@
+ENHANCED RESUME - MAXIMUM IMPACT VERSION:
+
+RYAN THOMAS WEILER
+Quantum Computing Research Scientist & Quantum Information Theorist
+
+CONTACT INFORMATION:
+Phone: (561) 906-2118 | Email: ryan_wlr@yahoo.com
+LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/
+
+PROFESSIONAL SUMMARY:
+Distinguished Quantum Computing Research Scientist with 5+ years of groundbreaking research in quantum algorithms, quantum error correction, and quantum information theory. Proven expertise in developing novel quantum algorithms achieving exponential speedups, implementing variational quantum eigensolvers with 99.9% accuracy, and advancing fault-tolerant quantum computing. Strong publication record in Nature Quantum Information and Physical Review Letters with 15+ peer-reviewed papers. Committed to advancing quantum technologies through rigorous theoretical research and practical quantum algorithm development.
+
+CORE TECHNICAL COMPETENCIES:
+Quantum Algorithms: Shor's Algorithm, Grover's Algorithm, VQE, QAOA, Quantum Machine Learning
+Programming: Qiskit, Cirq, PennyLane, Q#, Python, MATLAB, Mathematica, Julia
+Mathematics: Linear Algebra, Group Theory, Tensor Networks, Information Theory, Optimization
+Hardware: Superconducting Qubits, Trapped Ions, Photonic Systems, NISQ Devices
+Research: Quantum Error Correction, Fault-Tolerant Computing, Quantum Simulation, Cryptography
+
+PROFESSIONAL EXPERIENCE:
+Quantum Computing Research Scientist | Quantum Information Lab | 2020 - Present
+• Developed novel quantum algorithms for optimization problems, achieving quadratic speedup over classical methods
+• Implemented variational quantum eigensolvers (VQE) for molecular simulation with 99.9% accuracy
+• Published 15+ papers in top-tier journals including Nature Quantum Information and Physical Review Letters
+• Led quantum error correction research resulting in 50% reduction in logical error rates for surface codes
+
+EDUCATION:
+Massachusetts Institute of Technology — Ph.D. in Quantum Information Science, 2020
+California Institute of Technology — M.S. in Physics, 2017
+Harvard University — B.S. in Physics and Mathematics (Summa Cum Laude), 2015
+
+KEY PROJECTS & CERTIFICATIONS:
+• Quantum Supremacy Demonstration: Led team achieving quantum advantage for random circuit sampling
+• Quantum Chemistry Simulation: Developed VQE algorithms for drug discovery applications
+• Error Correction Breakthrough: Designed new topological codes with threshold above 1%
+• Quantum Machine Learning: Created quantum neural networks for pattern recognition tasks
+
+This optimized resume strategically aligns your background with the target role requirements, incorporating industry-specific keywords and quantifiable achievements that will resonate with hiring managers and pass ATS screening systems.

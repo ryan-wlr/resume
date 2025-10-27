@@ -1,0 +1,16 @@
+ENHANCED TECHNICAL SKILLS SECTION:
+
+Languages: C#, C/C++, Python, Java, JavaScript, SQL, HTML/CSS, PHP
+Frameworks/Tools: .NET Blazor, ASP.NET MVC, Django, Flask, React, Git/GitHub, MySQL, MS SQL
+AI/ML: TensorFlow, Keras, CNNs, NLP (RNNs/Transformers), scikit-learn, pandas, NumPy
+Cloud/Other: AWS, Azure, Docker, Linux, Jupyter Notebooks, Algorithmic Trading
+
+ADDITIONAL COMPETENCIES:
+• Problem-solving and analytical thinking
+• Team collaboration and communication
+• Time management and project coordination
+• Safety protocols and compliance
+• Technical documentation and reporting
+• Continuous learning and professional development
+
+This enhanced skills section strategically highlights both technical competencies and soft skills that are highly valued by employers in the software_engineer field.

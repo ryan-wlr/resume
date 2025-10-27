@@ -1,0 +1,31 @@
+ATS-OPTIMIZED RESUME VERSION:
+
+RYAN THOMAS WEILER
+Assistant Professor of Mathematics
+
+TECHNICAL SKILLS:
+Pure Mathematics: Algebraic Geometry, Homological Algebra, Category Theory, Number Theory
+Analysis: Real/Complex Analysis, Functional Analysis, Harmonic Analysis, Differential Geometry
+Algebra: Commutative Algebra, Representation Theory, Lie Algebras, Algebraic Topology
+Computational: SageMath, Magma, GAP, Macaulay2, LaTeX, TikZ, Proof Assistants (Lean, Coq)
+Research: Spectral Sequences, Derived Categories, Sheaf Cohomology, Modular Forms
+
+PROFESSIONAL EXPERIENCE:
+Assistant Professor of Mathematics | Research University | 2020 - Present
+• Proved fundamental theorems in algebraic geometry, published in Annals of Mathematics and Inventiones
+• Developed new techniques in homological algebra advancing K-theory and motivic cohomology
+• Solved longstanding conjectures in arithmetic geometry using advanced cohomological methods
+• Mentored 12+ graduate students and postdocs, with 8 completing Ph.D. dissertations under supervision
+
+EDUCATION:
+Princeton University — Ph.D. in Pure Mathematics (Algebraic Geometry), 2018
+Massachusetts Institute of Technology — M.S. in Mathematics, 2015
+Harvard University — B.A. in Mathematics (Phi Beta Kappa), 2013
+
+CERTIFICATIONS & ACHIEVEMENTS:
+• Breakthrough in Langlands Program: Established new cases of geometric Langlands correspondence
+• Cohomology Theory Advancement: Developed new computational tools for étale cohomology
+• Arithmetic Geometry Research: Proved rationality results for certain classes of algebraic varieties
+• NSF CAREER Award: $500K grant for research in motivic homotopy theory and A¹-algebraic topology
+
+This ATS-optimized version incorporates relevant keywords and proper formatting to maximize compatibility with applicant tracking systems while maintaining readability for human reviewers.

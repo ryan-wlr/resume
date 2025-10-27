@@ -1,0 +1,17 @@
+ENHANCED TECHNICAL SKILLS SECTION:
+
+Pure Mathematics: Algebraic Geometry, Homological Algebra, Category Theory, Number Theory
+Analysis: Real/Complex Analysis, Functional Analysis, Harmonic Analysis, Differential Geometry
+Algebra: Commutative Algebra, Representation Theory, Lie Algebras, Algebraic Topology
+Computational: SageMath, Magma, GAP, Macaulay2, LaTeX, TikZ, Proof Assistants (Lean, Coq)
+Research: Spectral Sequences, Derived Categories, Sheaf Cohomology, Modular Forms
+
+ADDITIONAL COMPETENCIES:
+• Problem-solving and analytical thinking
+• Team collaboration and communication
+• Time management and project coordination
+• Safety protocols and compliance
+• Technical documentation and reporting
+• Continuous learning and professional development
+
+This enhanced skills section strategically highlights both technical competencies and soft skills that are highly valued by employers in the mathematics_professor field.

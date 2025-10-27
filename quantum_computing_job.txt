@@ -1,0 +1,62 @@
+Quantum Computing Research Scientist Position
+
+We are seeking a highly qualified Quantum Computing Research Scientist to join our quantum information science team at a leading research institution.
+
+Required Qualifications:
+- Ph.D. in Physics, Mathematics, Computer Science, or related field
+- Deep understanding of quantum mechanics and quantum information theory
+- Experience with quantum algorithms (Shor's algorithm, Grover's algorithm, VQE)
+- Proficiency in quantum programming languages (Qiskit, Cirq, Q#)
+- Strong background in linear algebra and complex analysis
+- Experience with quantum error correction and fault-tolerant quantum computing
+- Knowledge of quantum hardware platforms (superconducting qubits, trapped ions, photonics)
+
+Advanced Mathematical Requirements:
+- Expertise in Hilbert spaces and operator theory
+- Understanding of tensor products and entanglement measures
+- Familiarity with group theory and representation theory
+- Knowledge of stochastic processes and information theory
+- Experience with variational methods and optimization theory
+
+Preferred Qualifications:
+- Experience with quantum machine learning algorithms
+- Knowledge of topological quantum computing
+- Familiarity with quantum cryptography and quantum key distribution
+- Experience with numerical methods for many-body quantum systems
+- Understanding of quantum field theory applications to quantum computing
+
+Research Areas:
+- Quantum algorithm design and analysis
+- Quantum error correction and fault tolerance
+- Quantum-classical hybrid algorithms
+- Quantum simulation of physical systems
+- Quantum advantage demonstrations
+- NISQ (Noisy Intermediate-Scale Quantum) applications
+
+Technical Skills Required:
+- Quantum circuit design and optimization
+- Quantum state tomography and process tomography
+- Decoherence and noise modeling
+- Quantum control theory
+- Adiabatic quantum computing
+- Quantum annealing methods
+
+Mathematical Problem-Solving Examples:
+- Design quantum algorithms for solving systems of linear equations
+- Develop error correction codes for specific noise models
+- Optimize variational quantum eigensolvers for chemistry applications
+- Analyze entanglement dynamics in many-body quantum systems
+- Implement quantum Fourier transform for cryptographic applications
+
+Programming Requirements:
+- Python with Qiskit, Cirq, or PennyLane
+- MATLAB/Mathematica for mathematical modeling
+- C++ for performance-critical quantum simulators
+- Julia for scientific computing applications
+- Experience with quantum cloud platforms (IBM Quantum, Google Quantum AI)
+
+Publications and Research:
+- Track record of publications in top-tier journals (Nature, Science, Physical Review)
+- Experience presenting at quantum computing conferences (QIP, QCrypt, TQC)
+- Collaborative research experience with experimental quantum groups
+- Grant writing experience for quantum research funding

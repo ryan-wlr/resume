@@ -19,8 +19,10 @@ import argparse
 # Optional imports with fallbacks
 try:
     from docx import Document
-    from docx.shared import Inches, Pt
+    from docx.shared import Inches, Pt, RGBColor
     from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.oxml.shared import qn
+    from docx.oxml import OxmlElement
     HAS_DOCX = True
 except ImportError:
     print("WARNING: python-docx not installed. Run: pip install python-docx")
@@ -230,6 +232,10 @@ class ResumeOptimizer:
         
         # Shared content maps for all response types
         title_map = {
+            'quantum_computing_scientist': 'Quantum Computing Research Scientist & Quantum Information Theorist',
+            'mathematics_professor': 'Professor of Mathematics & Research Mathematician',
+            'mathematician': 'Applied Mathematician & Computational Researcher',
+            'theoretical_physicist': 'Theoretical Physicist & Mathematical Physics Researcher',
             'nurse': 'Registered Nurse & Healthcare Professional',
             'teacher': 'Elementary Education Teacher & Curriculum Specialist', 
             'mechanic': 'Automotive Technician & Diagnostic Specialist',
@@ -241,6 +247,10 @@ class ResumeOptimizer:
         }
         
         summary_map = {
+            'quantum_computing_scientist': 'Distinguished Quantum Computing Research Scientist with 5+ years of groundbreaking research in quantum algorithms, quantum error correction, and quantum information theory. Proven expertise in developing novel quantum algorithms achieving exponential speedups, implementing variational quantum eigensolvers with 99.9% accuracy, and advancing fault-tolerant quantum computing. Strong publication record in Nature Quantum Information and Physical Review Letters with 15+ peer-reviewed papers. Committed to advancing quantum technologies through rigorous theoretical research and practical quantum algorithm development.',
+            'mathematics_professor': 'Accomplished Mathematics Professor with 7+ years of research excellence in pure mathematics, specializing in algebraic geometry, homological algebra, and arithmetic geometry. Proven expertise in solving fundamental problems using advanced cohomological methods, developing new theoretical frameworks in K-theory and motivic cohomology, and mentoring 12+ graduate students to Ph.D. completion. Strong publication record in Annals of Mathematics and Inventiones Mathematicae. Committed to advancing mathematical knowledge through rigorous proof techniques and innovative research approaches.',
+            'mathematician': 'Expert Applied Mathematician with 6+ years of experience developing mathematical models for complex systems analysis and creating novel computational algorithms. Proven expertise in partial differential equations, optimization theory, and numerical methods with demonstrated ability to improve prediction accuracy by 40% through advanced mathematical modeling. Strong background in high-performance computing, machine learning applications, and interdisciplinary collaboration. Committed to applying mathematical rigor to solve real-world problems in science and engineering.',
+            'theoretical_physicist': 'Leading Theoretical Physicist with 6+ years of research excellence in quantum field theory, string theory, and mathematical physics. Proven expertise in developing new theoretical frameworks, advancing understanding of black hole physics and holographic duality, and connecting abstract theory to experimental observations. Strong publication record in top physics journals and international conference presentations. Committed to pushing the boundaries of fundamental physics through rigorous mathematical analysis and innovative theoretical approaches.',
             'nurse': 'Compassionate Registered Nurse with 3+ years of experience providing comprehensive patient care in medical-surgical units. Proven expertise in medication administration, patient assessment, and clinical documentation with demonstrated ability to improve patient outcomes by 25% through evidence-based care. Strong knowledge of HIPAA regulations and healthcare protocols. Committed to delivering safe, quality patient care with excellent communication skills.',
             'teacher': 'Dedicated Elementary School Teacher with 3+ years of experience designing engaging curriculum for diverse student populations. Proven expertise in differentiated instruction, classroom management, and student assessment with demonstrated ability to improve student achievement by 25% through innovative teaching methods. Strong knowledge of state standards and educational technology. Committed to fostering student growth and academic success.',
             'mechanic': 'Skilled Automotive Technician with 3+ years of comprehensive experience in engine diagnostics, brake repair, and vehicle maintenance. Proven expertise in diagnostic equipment, repair procedures, and customer service with demonstrated ability to reduce diagnostic time by 25% through systematic troubleshooting. Strong knowledge of ASE standards and safety protocols. Committed to delivering reliable, quality automotive repair services.',
@@ -859,29 +869,636 @@ The optimized resume now better aligns with modern hiring practices and should s
         
         return self.mock_response("keyword enhancement", job_analysis.role_type)
     
-    def create_tailored_version(self, resume_content: str, job_analysis: JobAnalysis, 
+    def create_enhanced_resume(self, resume_content: str, job_analysis: JobAnalysis, 
                               target_role: str, target_company: str) -> str:
-        """Create role-specific tailored resume version"""
-        print("\n>>> TAILORING RESUME FOR SPECIFIC ROLE...")
+        """Create enhanced professional resume version"""
+        print("\n>>> CREATING ENHANCED PROFESSIONAL RESUME...")
         
-        prompt = f"""Create tailored resume for {target_role} at {target_company}:
-        Resume: {resume_content[:1000]}...
-        Company Values: {job_analysis.company_values}
-        Required Skills: {job_analysis.required_skills}
-        Responsibilities: {job_analysis.key_responsibilities[:3]}"""
+        # Detect field for context
+        detected_field = self.detect_career_field(target_role.lower())
+        field_data = self.get_field_data(detected_field)
         
-        return self.mock_response("tailored resume", target_role)
+        enhanced_resume = f"""RYAN THOMAS WEILER
+{field_data['experience_title'].split('|')[0].strip()}
+
+CONTACT INFORMATION:
+Phone: (561) 906-2118 | Email: ryan_wlr@yahoo.com
+LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/
+GitHub: https://github.com/ryan-wlr
+
+PROFESSIONAL SUMMARY:
+Results-driven {detected_field.replace('_', ' ')} professional with proven expertise in {', '.join(field_data['skills'][:4])}. 
+Demonstrated track record of delivering high-impact solutions and driving measurable results in fast-paced environments. 
+Seeking to leverage technical excellence and leadership capabilities as {target_role} at {target_company}.
+
+CORE TECHNICAL COMPETENCIES:
+{chr(10).join(['• ' + skill for skill in field_data['skills'][:12]])}
+
+PROFESSIONAL EXPERIENCE:
+
+{field_data['experience_title']}
+• Led development of innovative solutions resulting in improved efficiency and performance
+• Collaborated with cross-functional teams to deliver projects on time and within budget  
+• Implemented best practices and methodologies enhancing overall operational effectiveness
+• Mentored team members and contributed to knowledge sharing initiatives
+• Achieved measurable results through data-driven decision making and strategic planning
+
+EDUCATION:
+{field_data['education']}
+
+KEY PROJECTS:
+• Advanced {detected_field.replace('_', ' ')} initiative demonstrating expertise in core competencies
+• Cross-functional collaboration project showcasing leadership and communication skills
+• Innovation project applying cutting-edge techniques to solve complex challenges
+• Mentorship and knowledge transfer initiative contributing to team development
+
+ACHIEVEMENTS:
+• Consistently exceeded performance expectations in all roles and responsibilities
+• Recognized for technical excellence and professional growth within field
+• Contributed to successful completion of high-priority projects and initiatives
+• Demonstrated commitment to continuous learning and skill development
+
+This resume is optimized for {target_role} positions with emphasis on technical skills,
+leadership capabilities, and measurable contributions to organizational success."""
+
+        return enhanced_resume
+    
+    def create_narrative_resume(self, resume_content: str, job_analysis: JobAnalysis, 
+                              target_role: str, target_company: str) -> str:
+        """Create a story-driven resume that shows career progression and narrative"""
+        print("\n>>> CREATING NARRATIVE-DRIVEN RESUME...")
+        
+        # Extract actual resume information
+        resume_info = self.extract_resume_information(resume_content)
+        
+        # Detect field for storytelling context
+        detected_field = self.detect_career_field(target_role.lower())
+        
+        # Try to get full story template first, fall back to personalized story
+        try:
+            full_story_elements = self.generate_career_story(detected_field, target_role, target_company)
+            # Combine template story with personalized information
+            story_elements = {
+                'opening_hook': full_story_elements['opening_hook'],
+                'title': f"{detected_field.replace('_', ' ').title()} Professional",
+                'professional_narrative': full_story_elements['professional_narrative'],
+                'career_progression': full_story_elements['career_progression'],
+                'signature_achievements': full_story_elements['signature_achievements'],
+                'skills': resume_info['skills'] if resume_info['skills'] else ['Technology expertise', 'Problem solving', 'Innovation'],
+                'education': resume_info['education'] if resume_info['education'] else f"Relevant education in {detected_field.replace('_', ' ')}",
+                'story_projects': full_story_elements['story_projects'],
+                'closing_vision': full_story_elements['closing_vision']
+            }
+        except:
+            # Fall back to personalized story if template doesn't exist
+            story_elements = self.generate_personalized_story(resume_info, detected_field, target_role, target_company)
+        
+        narrative_resume = f"""CAREER STORY RESUME - {target_role.upper()}
+
+{story_elements['opening_hook']}
+
+{resume_info['name']}
+{story_elements['title']}
+
+CONTACT INFORMATION:
+{resume_info['contact_info']}
+
+{story_elements['professional_narrative']}
+
+CAREER JOURNEY & IMPACT STORY:
+
+{story_elements['career_progression']}
+
+KEY ACHIEVEMENTS THAT DEFINE MY STORY:
+{chr(10).join(['• ' + achievement for achievement in story_elements['signature_achievements']])}
+
+TECHNICAL EXPERTISE DEVELOPED THROUGH MY JOURNEY:
+{chr(10).join(['• ' + skill for skill in story_elements['skills']])}
+
+EDUCATION THAT SHAPED MY PATH:
+{story_elements['education']}
+
+DEFINING PROJECTS & MILESTONES:
+{chr(10).join(['• ' + project for project in story_elements['story_projects']])}
+
+{story_elements['closing_vision']}
+
+This resume tells the story of a professional journey marked by continuous growth, 
+meaningful impact, and unwavering commitment to excellence in {detected_field.replace('_', ' ')}."""
+
+        return narrative_resume
+    
+    def extract_resume_information(self, resume_content: str) -> dict:
+        """Extract key information from the actual resume content"""
+        lines = resume_content.strip().split('\n')
+        info = {
+            'name': 'RYAN THOMAS WEILER',  # Default
+            'contact_info': 'Phone: (561) 906-2118 | Email: ryan_wlr@yahoo.com\nLinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/\nGitHub: https://github.com/ryan-wlr',
+            'experience': [],
+            'skills': [],
+            'education': '',
+            'projects': []
+        }
+        
+        # Extract name (usually first line)
+        if lines and len(lines[0].strip()) > 0 and not '@' in lines[0]:
+            name_candidate = lines[0].strip()
+            if len(name_candidate.split()) >= 2 and len(name_candidate) < 50:
+                info['name'] = name_candidate.upper()
+        
+        # Extract contact information
+        contact_lines = []
+        for line in lines[:10]:  # Check first 10 lines
+            if any(indicator in line.lower() for indicator in ['@', 'phone', 'email', 'linkedin', 'github', '(']):
+                contact_lines.append(line.strip())
+        if contact_lines:
+            info['contact_info'] = '\n'.join(contact_lines)
+        
+        # Extract experience (look for job titles, companies, dates)
+        experience_keywords = ['experience', 'work', 'employment', 'position', 'role']
+        skills_keywords = ['skills', 'technical', 'programming', 'languages', 'tools']
+        education_keywords = ['education', 'degree', 'university', 'college', 'school']
+        projects_keywords = ['projects', 'portfolio', 'achievements']
+        
+        current_section = None
+        for line in lines:
+            line_lower = line.lower().strip()
+            
+            # Identify sections
+            if any(keyword in line_lower for keyword in experience_keywords):
+                current_section = 'experience'
+                continue
+            elif any(keyword in line_lower for keyword in skills_keywords):
+                current_section = 'skills'
+                continue
+            elif any(keyword in line_lower for keyword in education_keywords):
+                current_section = 'education'
+                continue
+            elif any(keyword in line_lower for keyword in projects_keywords):
+                current_section = 'projects'
+                continue
+            
+            # Add content to appropriate section
+            if line.strip() and current_section:
+                if current_section == 'experience' and len(line.strip()) > 5:
+                    info['experience'].append(line.strip())
+                elif current_section == 'skills':
+                    # Split skills by common delimiters
+                    skills_text = line.strip()
+                    for delimiter in [',', '|', '•', '-', '*']:
+                        if delimiter in skills_text:
+                            skills_list = [s.strip() for s in skills_text.split(delimiter)]
+                            info['skills'].extend([s for s in skills_list if s])
+                            break
+                    else:
+                        if skills_text:
+                            info['skills'].append(skills_text)
+                elif current_section == 'education' and len(line.strip()) > 5:
+                    info['education'] += line.strip() + ' '
+                elif current_section == 'projects' and len(line.strip()) > 5:
+                    info['projects'].append(line.strip())
+        
+        # Clean up and validate
+        info['skills'] = list(set([skill for skill in info['skills'] if len(skill) > 1 and len(skill) < 50]))[:15]
+        info['experience'] = [exp for exp in info['experience'] if len(exp) > 10][:10]
+        info['projects'] = [proj for proj in info['projects'] if len(proj) > 10][:8]
+        info['education'] = info['education'].strip()
+        
+        return info
+    
+    def generate_personalized_story(self, resume_info: dict, field: str, target_role: str, target_company: str) -> dict:
+        """Generate story elements using actual resume data"""
+        
+        # Create personalized opening hook
+        field_display = field.replace('_', ' ').title()
+        opening_hooks = {
+            'software_engineer': f"💻 THE CODE CRAFTSMAN: From {resume_info['name'].title()}'s first lines of code to building systems that transform how people work",
+            'quantum_computing_scientist': f"🌟 THE QUANTUM PIONEER: {resume_info['name'].title()}'s journey from curiosity about quantum mechanics to breakthrough research",
+            'mathematics_professor': f"📐 THE MATHEMATICAL STORYTELLER: {resume_info['name'].title()}'s quest to unlock the universe's mathematical secrets",
+            'data_scientist': f"📊 THE DATA DETECTIVE: {resume_info['name'].title()}'s mission to find insights hidden in complex datasets",
+            'generic': f"🌟 THE {field_display.upper()} PROFESSIONAL: {resume_info['name'].title()}'s journey of growth and impact in {field_display.lower()}"
+        }
+        
+        opening_hook = opening_hooks.get(field, opening_hooks['generic'])
+        
+        # Create personalized professional narrative
+        primary_skills = resume_info['skills'][:4] if resume_info['skills'] else ['technology', 'problem solving', 'innovation', 'collaboration']
+        
+        professional_narrative = f"""PROFESSIONAL NARRATIVE:
+My professional journey has been defined by a passion for {field_display.lower()} and a commitment to creating meaningful impact through {', '.join(primary_skills[:3])}. Each challenge I've encountered has strengthened my expertise and deepened my understanding of how technology can solve real-world problems. From early exploration to current mastery, my career tells a story of continuous learning, innovation, and dedication to excellence."""
+        
+        # Create career progression from actual experience
+        career_progression = self.build_career_progression_from_resume(resume_info, field)
+        
+        # Generate achievements from experience
+        signature_achievements = self.extract_achievements_from_resume(resume_info, field)
+        
+        # Create story projects from actual projects/experience
+        story_projects = self.build_story_projects_from_resume(resume_info, field)
+        
+        # Generate closing vision
+        closing_vision = f"""FUTURE VISION:
+My {field_display.lower()} story continues with excitement for the opportunities at {target_company}. I envision applying my proven expertise in {', '.join(primary_skills[:3])} to tackle new challenges, drive innovation, and contribute to the company's mission. This next chapter represents not just career growth, but the chance to make meaningful impact in an organization that values {field_display.lower()} excellence."""
+        
+        return {
+            'opening_hook': opening_hook,
+            'title': f"{field_display} Professional",
+            'professional_narrative': professional_narrative,
+            'career_progression': career_progression,
+            'signature_achievements': signature_achievements,
+            'skills': resume_info['skills'] if resume_info['skills'] else [f"{field_display} expertise", "Problem solving", "Technical innovation", "Team collaboration"],
+            'education': resume_info['education'] if resume_info['education'] else f"Relevant education and training in {field_display.lower()}",
+            'story_projects': story_projects,
+            'closing_vision': closing_vision
+        }
+    
+    def build_career_progression_from_resume(self, resume_info: dict, field: str) -> str:
+        """Build career progression narrative from actual resume experience"""
+        
+        if resume_info['experience']:
+            # Use actual experience
+            experiences = resume_info['experience'][:3]  # Take up to 3 experiences
+            
+            progression = f"""Chapter 1: THE FOUNDATION
+• {experiences[0] if len(experiences) > 0 else 'Built foundational skills through dedicated learning and practice'}
+• Developed core competencies and professional work habits
+• Gained valuable experience in real-world problem solving
+
+Chapter 2: THE GROWTH
+• {experiences[1] if len(experiences) > 1 else 'Advanced technical skills through challenging projects and mentorship'}
+• Expanded expertise and took on increasing responsibilities
+• Demonstrated capability to deliver quality results consistently
+
+Chapter 3: THE MASTERY
+• {experiences[2] if len(experiences) > 2 else 'Achieved mastery in key areas while continuing to learn and innovate'}
+• Leading projects and contributing to team success
+• Preparing for next level of professional growth and impact"""
+        else:
+            # Generic progression based on field
+            field_display = field.replace('_', ' ').title()
+            progression = f"""Chapter 1: THE FOUNDATION (Early Career)
+• Discovered passion for {field_display.lower()} through hands-on learning
+• Built fundamental skills through education and practical experience
+• Established strong work ethic and professional standards
+
+Chapter 2: THE GROWTH (Skill Development)
+• Advanced technical capabilities through challenging projects
+• Gained recognition for quality work and professional excellence
+• Developed expertise in specialized areas of {field_display.lower()}
+
+Chapter 3: THE MASTERY (Current Focus)
+• Achieved proficiency in core {field_display.lower()} competencies
+• Contributing to team success and organizational goals
+• Continuously learning and adapting to industry evolution"""
+        
+        return progression
+    
+    def extract_achievements_from_resume(self, resume_info: dict, field: str) -> list:
+        """Extract and enhance achievements from resume content"""
+        
+        achievements = []
+        
+        # Look for quantifiable elements in experience
+        for exp in resume_info['experience']:
+            if any(indicator in exp.lower() for indicator in ['improved', 'increased', 'reduced', 'developed', 'led', 'created', 'built']):
+                achievements.append(f"Achieved excellence in {exp[:80]}..." if len(exp) > 80 else exp)
+        
+        # Add skill-based achievements
+        if resume_info['skills']:
+            achievements.append(f"Mastered key technologies including {', '.join(resume_info['skills'][:4])}")
+        
+        # Add project achievements
+        for project in resume_info['projects']:
+            achievements.append(f"Successfully delivered project: {project[:60]}..." if len(project) > 60 else project)
+        
+        # Ensure we have at least 3 achievements
+        field_display = field.replace('_', ' ').title()
+        default_achievements = [
+            f"Demonstrated consistent excellence in {field_display.lower()} practices and methodologies",
+            f"Contributed to successful project completion with high-quality results",
+            f"Continuously improved skills and stayed current with {field_display.lower()} best practices",
+            f"Collaborated effectively with teams to achieve organizational objectives"
+        ]
+        
+        while len(achievements) < 4:
+            achievements.append(default_achievements[len(achievements)])
+        
+        return achievements[:6]  # Limit to 6 achievements
+    
+    def build_story_projects_from_resume(self, resume_info: dict, field: str) -> list:
+        """Build story projects from actual resume projects and experience"""
+        
+        story_projects = []
+        
+        # Use actual projects if available
+        for project in resume_info['projects']:
+            story_projects.append(project)
+        
+        # Transform experience into project format
+        for exp in resume_info['experience']:
+            if any(keyword in exp.lower() for keyword in ['project', 'system', 'application', 'platform', 'solution']):
+                story_projects.append(f"Professional Project: {exp}")
+        
+        # Ensure we have at least 3 story projects
+        field_display = field.replace('_', ' ').title()
+        default_projects = [
+            f"Professional Excellence Initiative: Demonstrated mastery of {field_display.lower()} best practices",
+            f"Technical Innovation Project: Applied cutting-edge techniques to solve complex challenges",
+            f"Collaborative Achievement: Successfully worked with teams to deliver high-impact results",
+            f"Continuous Learning Journey: Stayed current with {field_display.lower()} industry developments"
+        ]
+        
+        while len(story_projects) < 4:
+            story_projects.append(default_projects[len(story_projects)])
+        
+        return story_projects[:6]  # Limit to 6 projects
+    
+    def generate_career_story(self, field: str, target_role: str, target_company: str) -> dict:
+        """Generate compelling story elements dynamically for any profession"""
+        return self.generate_dynamic_story_template(field, target_role, target_company)
+    
+    def generate_dynamic_story_template(self, field: str, target_role: str, target_company: str) -> dict:
+        """Generate compelling storytelling template dynamically for any profession"""
+        
+        # Get field-specific data
+        field_data = self.get_field_data(field)
+        display_field = field.replace('_', ' ').title()
+        
+        # Define profession-specific story elements
+        story_elements = self.get_profession_story_elements(field, target_role)
+        
+        # Generate dynamic opening hook
+        opening_hook = f"{story_elements['emoji']} THE {story_elements['title']}: {story_elements['hook_text']}"
+        
+        # Generate professional narrative
+        professional_narrative = f"""PROFESSIONAL NARRATIVE:
+{story_elements['narrative_intro']} My journey in {display_field.lower()} has been driven by {story_elements['driving_force']}. {story_elements['expertise_statement']} I understand that {story_elements['field_philosophy']}"""
+        
+        # Generate career progression chapters
+        career_progression = f"""Chapter 1: THE FOUNDATION ({story_elements['early_years']})
+• {story_elements['foundation_discovery']}
+• {story_elements['foundation_skills']}
+• {story_elements['foundation_achievement']}
+
+Chapter 2: THE {story_elements['chapter2_title']} ({story_elements['growth_years']})
+• {story_elements['growth_advancement']}
+• {story_elements['growth_specialization']}
+• {story_elements['growth_breakthrough']}
+
+Chapter 3: THE {story_elements['chapter3_title']} ({story_elements['current_years']})
+• {story_elements['current_leadership']}
+• {story_elements['current_innovation']}
+• {story_elements['current_mentoring']}"""
+        
+        # Generate signature achievements
+        signature_achievements = [
+            f"{story_elements['achievement1_action']} {story_elements['achievement1_metric']} {story_elements['achievement1_context']}",
+            f"{story_elements['achievement2_action']} {story_elements['achievement2_metric']} {story_elements['achievement2_context']}",
+            f"{story_elements['achievement3_action']} {story_elements['achievement3_metric']} {story_elements['achievement3_context']}",
+            f"{story_elements['achievement4_action']} {story_elements['achievement4_metric']} {story_elements['achievement4_context']}"
+        ]
+        
+        # Generate story projects
+        story_projects = [
+            f"{story_elements['project1_name']}: {story_elements['project1_description']}",
+            f"{story_elements['project2_name']}: {story_elements['project2_description']}",
+            f"{story_elements['project3_name']}: {story_elements['project3_description']}",
+            f"{story_elements['project4_name']}: {story_elements['project4_description']}"
+        ]
+        
+        # Generate closing vision
+        closing_vision = f"""FUTURE VISION:
+My {display_field.lower()} story continues with {story_elements['future_emotion']} for the opportunities at {target_company}. I envision {story_elements['future_vision']} while {story_elements['future_contribution']}."""
+        
+        return {
+            'opening_hook': opening_hook,
+            'professional_narrative': professional_narrative,
+            'career_progression': career_progression,
+            'signature_achievements': signature_achievements,
+            'story_projects': story_projects,
+            'closing_vision': closing_vision
+        }
+    
+    def get_profession_story_elements(self, field: str, target_role: str) -> dict:
+        """Get profession-specific storytelling elements for dynamic template generation"""
+        
+        # Define story elements by profession type
+        profession_stories = {
+            'welder': {
+                'emoji': '🔥',
+                'title': 'METAL MASTER',
+                'hook_text': 'Forging strength and precision through the art and science of welding',
+                'narrative_intro': 'Welding is where art meets engineering, where molten metal becomes the foundation of our modern world.',
+                'driving_force': 'the pursuit of perfection in every bead, every joint, and every fabrication',
+                'expertise_statement': 'From structural steel that supports skyscrapers to precision aerospace components,',
+                'field_philosophy': 'quality welding is not just about joining metal—it\'s about creating lasting strength that people depend on every day.',
+                'early_years': 'Early Career',
+                'foundation_discovery': 'Discovered the craft of welding through hands-on training and certification programs',
+                'foundation_skills': 'Mastered fundamental techniques: stick welding, MIG, TIG, and flux-core processes',
+                'foundation_achievement': 'Built reputation for consistent quality and attention to safety protocols',
+                'chapter2_title': 'SPECIALIZATION',
+                'growth_years': 'Skill Development',
+                'growth_advancement': 'Advanced to specialized welding processes for critical applications',
+                'growth_specialization': 'Achieved AWS certifications and gained expertise in exotic materials',
+                'growth_breakthrough': 'Developed precision welding skills for aerospace and pressure vessel work',
+                'chapter3_title': 'MASTERY',
+                'current_years': 'Current Focus',
+                'current_leadership': 'Leading complex fabrication projects requiring advanced welding expertise',
+                'current_innovation': 'Training and mentoring new welders in safety and quality standards',
+                'current_mentoring': 'Continuously adapting to new materials and welding technologies',
+                'achievement1_action': 'Achieved',
+                'achievement1_metric': '99.5% pass rate',
+                'achievement1_context': 'on critical structural weld inspections across 500+ projects',
+                'achievement2_action': 'Completed',
+                'achievement2_metric': 'AWS D1.1 structural welding certification',
+                'achievement2_context': 'with perfect test scores',
+                'achievement3_action': 'Led fabrication team that reduced',
+                'achievement3_metric': 'project completion time by 25%',
+                'achievement3_context': 'through process optimization',
+                'achievement4_action': 'Maintained',
+                'achievement4_metric': 'zero safety incidents',
+                'achievement4_context': 'across 5+ years of high-risk welding operations',
+                'project1_name': 'Structural Steel Excellence',
+                'project1_description': 'Critical building framework welding for high-rise construction',
+                'project2_name': 'Precision Pipeline Project',
+                'project2_description': 'High-pressure pipe welding meeting ASME standards',
+                'project3_name': 'Aerospace Component Fabrication',
+                'project3_description': 'TIG welding of aluminum assemblies for aircraft industry',
+                'project4_name': 'Safety Leadership Initiative',
+                'project4_description': 'Comprehensive welding safety training program development',
+                'future_emotion': 'excitement',
+                'future_vision': 'applying proven expertise in precision welding, quality control, and safety leadership',
+                'future_contribution': 'contributing to projects that demand the highest standards of craftsmanship and reliability'
+            },
+            'optical_engineer': {
+                'emoji': '🔬',
+                'title': 'LIGHT ARCHITECT',
+                'hook_text': 'Engineering the future through precision optics and photonic innovation',
+                'narrative_intro': 'Light has always been my medium of choice for solving complex engineering challenges.',
+                'driving_force': 'the elegant physics of photonics and the endless possibilities that emerge when light is precisely controlled',
+                'expertise_statement': 'From designing laser systems to developing fiber optic communications,',
+                'field_philosophy': 'optical technologies can transform industries and improve lives through precise light manipulation.',
+                'early_years': 'Early Career',
+                'foundation_discovery': 'Developed fascination with optical physics and precision engineering',
+                'foundation_skills': 'Mastered fundamentals of laser systems, fiber optics, and optical design',
+                'foundation_achievement': 'Built first optical prototypes, discovering the art of light manipulation',
+                'chapter2_title': 'PRECISION',
+                'growth_years': 'Skill Development',
+                'growth_advancement': 'Advanced expertise in optical modeling using Zemax and Code V',
+                'growth_specialization': 'Designed complex optical systems for telecommunications and defense applications',
+                'growth_breakthrough': 'Achieved breakthrough performance improvements in fiber optic transmission',
+                'chapter3_title': 'INNOVATION',
+                'current_years': 'Current Focus',
+                'current_leadership': 'Leading development of next-generation photonic devices and systems',
+                'current_innovation': 'Pioneering new approaches to optical design and laser technology',
+                'current_mentoring': 'Mentoring teams while pushing boundaries of optical engineering',
+                'achievement1_action': 'Designed revolutionary laser systems improving',
+                'achievement1_metric': 'efficiency by 40%',
+                'achievement1_context': 'over industry standards',
+                'achievement2_action': 'Developed fiber optic communication systems enabling',
+                'achievement2_metric': '10Gbps data transmission',
+                'achievement2_context': 'with ultra-low latency performance',
+                'achievement3_action': 'Led optical modeling projects resulting in',
+                'achievement3_metric': '25% cost reduction',
+                'achievement3_context': 'through design optimization',
+                'achievement4_action': 'Pioneered precision optical assemblies with',
+                'achievement4_metric': 'sub-micron alignment tolerances',
+                'achievement4_context': 'for critical aerospace applications',
+                'project1_name': 'Photonic Revolution',
+                'project1_description': 'Next-generation laser diode systems for telecommunications',
+                'project2_name': 'Precision Optics Platform',
+                'project2_description': 'Advanced optical design reducing manufacturing costs',
+                'project3_name': 'Fiber Network Innovation',
+                'project3_description': 'High-speed optical communication system design',
+                'project4_name': 'Laser Safety Initiative',
+                'project4_description': 'Comprehensive optical safety protocols and training programs',
+                'future_emotion': 'enthusiasm',
+                'future_vision': 'applying proven expertise in laser systems, fiber optics, and precision optical design',
+                'future_contribution': 'developing breakthrough photonic solutions that advance the field and drive technological innovation'
+            },
+            'software_engineer': {
+                'emoji': '💻',
+                'title': 'CODE CRAFTSMAN',
+                'hook_text': 'Transforming complex problems into elegant solutions that power the digital world',
+                'narrative_intro': 'Code is poetry, algorithms are symphonies, and great software tells the story of human ingenuity solving real-world challenges.',
+                'driving_force': 'the belief that technology should enhance human potential',
+                'expertise_statement': 'From my first "Hello World" to architecting systems that process millions of transactions,',
+                'field_philosophy': 'each line of code should be written with purpose and passion to create meaningful impact.',
+                'early_years': '2021-2022',
+                'foundation_discovery': 'First programming course ignited passion for logical problem-solving',
+                'foundation_skills': 'Built first web application, realizing technology\'s power to create and connect',
+                'foundation_achievement': 'Internship experience: learned collaborative software development',
+                'chapter2_title': 'MASTERY',
+                'growth_years': '2022-2023',
+                'growth_advancement': 'Specialized in financial technology, combining coding skills with market knowledge',
+                'growth_specialization': 'Developed automated trading algorithms achieving significant returns',
+                'growth_breakthrough': 'Open-source contributions gained recognition in developer community',
+                'chapter3_title': 'INNOVATION',
+                'current_years': '2023-Present',
+                'current_leadership': 'Leading fintech projects that revolutionize how people interact with technology',
+                'current_innovation': 'Architecting scalable systems processing millions of daily transactions',
+                'current_mentoring': 'Mentoring junior developers while pushing technological boundaries',
+                'achievement1_action': 'Architected systems generating',
+                'achievement1_metric': '15% annual returns',
+                'achievement1_context': 'with optimized risk management',
+                'achievement2_action': 'Built scalable data pipelines processing',
+                'achievement2_metric': '10,000+ daily data points',
+                'achievement2_context': 'with real-time analytics capabilities',
+                'achievement3_action': 'Led development of platform serving',
+                'achievement3_metric': '50,000+ active users',
+                'achievement3_context': 'with 99.9% uptime reliability',
+                'achievement4_action': 'Open-source contributions downloaded',
+                'achievement4_metric': '100,000+ times',
+                'achievement4_context': 'by global developer community',
+                'project1_name': 'The Analytics Engine',
+                'project1_description': 'AI-powered algorithms achieving breakthrough performance metrics',
+                'project2_name': 'Platform Revolution',
+                'project2_description': 'Full-stack application democratizing advanced technology access',
+                'project3_name': 'System Maestro',
+                'project3_description': 'Real-time analytics dashboard used by professional teams',
+                'project4_name': 'Code for Good',
+                'project4_description': 'Open-source tools helping organizations optimize their operations',
+                'future_emotion': 'excitement',
+                'future_vision': 'building software that not only solves complex problems but creates new possibilities',
+                'future_contribution': 'continuing to grow and contribute to technological advancement'
+            }
+        }
+        
+        # Return profession-specific elements or generate generic ones
+        if field in profession_stories:
+            return profession_stories[field]
+        else:
+            return self.generate_generic_profession_elements(field, target_role)
+    
+    def generate_generic_profession_elements(self, field: str, target_role: str) -> dict:
+        """Generate generic story elements for any profession not specifically defined"""
+        display_field = field.replace('_', ' ').title()
+        
+        return {
+            'emoji': '🌟',
+            'title': f'{display_field.upper()} PROFESSIONAL',
+            'hook_text': f'From passion to expertise, building excellence in {display_field.lower()}',
+            'narrative_intro': f'My journey in {display_field.lower()} has been a quest for continuous improvement and meaningful impact.',
+            'driving_force': 'a passion for excellence and a commitment to making a positive difference',
+            'expertise_statement': f'Through years of dedicated practice in {display_field.lower()},',
+            'field_philosophy': f'true success comes from combining technical skill with professional wisdom and ethical practice.',
+            'early_years': '2020-2021',
+            'foundation_discovery': f'Discovered passion for {display_field.lower()} through hands-on experience',
+            'foundation_skills': f'Built fundamental skills in {display_field.lower()} through dedicated practice and study',
+            'foundation_achievement': f'First major success in {display_field.lower()} established confidence and direction',
+            'chapter2_title': 'GROWTH',
+            'growth_years': '2021-2023',
+            'growth_advancement': f'Advanced skills in {display_field.lower()} through challenging projects and mentorship',
+            'growth_specialization': f'Developed expertise in specialized areas of {display_field.lower()}',
+            'growth_breakthrough': f'Gained recognition for quality work and professional excellence in {display_field.lower()}',
+            'chapter3_title': 'MASTERY',
+            'current_years': '2023-Present',
+            'current_leadership': f'Established as skilled {display_field.lower()} professional with proven track record',
+            'current_innovation': f'Leading projects and implementing innovative {display_field.lower()} practices',
+            'current_mentoring': f'Mentoring others while advancing {display_field.lower()} standards',
+            'achievement1_action': f'Achieved excellence in {display_field.lower()} with',
+            'achievement1_metric': 'consistent high-quality results',
+            'achievement1_context': 'across multiple challenging projects',
+            'achievement2_action': f'Improved efficiency by',
+            'achievement2_metric': '25%',
+            'achievement2_context': f'through innovative {display_field.lower()} practices',
+            'achievement3_action': f'Led successful projects that advanced',
+            'achievement3_metric': f'{display_field.lower()} standards',
+            'achievement3_context': 'and organizational capabilities',
+            'achievement4_action': f'Mentored others and contributed to',
+            'achievement4_metric': f'{display_field.lower()} community growth',
+            'achievement4_context': 'through knowledge sharing and collaboration',
+            'project1_name': 'Excellence Initiative',
+            'project1_description': f'Demonstrated mastery of {display_field.lower()} best practices',
+            'project2_name': 'Innovation Project',
+            'project2_description': f'Developed new approaches improving {display_field.lower()} outcomes',
+            'project3_name': 'Leadership Challenge',
+            'project3_description': f'Successfully guided team through complex {display_field.lower()} project',
+            'project4_name': 'Community Impact',
+            'project4_description': f'Contributed expertise to advance {display_field.lower()} field',
+            'future_emotion': 'enthusiasm',
+            'future_vision': f'applying proven expertise in {display_field.lower()} while continuing to grow',
+            'future_contribution': f'contributing to {display_field.lower()} field advancement and organizational success'
+        }
 
     def process_complete_optimization(self, job_description: str, resume_content: str, 
                                     target_role: str = "Software Engineer", 
                                     target_company: str = "Target Company") -> Dict[str, str]:
-        """Execute complete resume optimization workflow"""
+        """Execute complete resume optimization workflow with narrative storytelling"""
         
         print(">>> STARTING COMPLETE RESUME OPTIMIZATION PROCESS")
         print(f"    Target Role: {target_role}")
         print(f"    Target Company: {target_company}")
         print(f"    Processing {len(resume_content)} characters of resume content")
         print(f"    Analyzing {len(job_description)} characters of job description")
+        
+        # Ask user for resume style preference
+        print("\n>>> RESUME STYLE SELECTION:")
+        print("    1. STORY RESUME - Narrative-driven, tells your career journey")
+        print("    2. STANDARD RESUME - Enhanced professional format")
+        print("    3. BOTH VERSIONS - Create narrative and standard resumes")
+        
+        style_choice = input("Choose resume style (1, 2, or 3): ").strip()
         
         # Step 1: Analyze job requirements
         job_analysis = self.analyze_job_posting(job_description, target_role, target_company)
@@ -920,13 +1537,26 @@ OPTIMIZATION RECOMMENDATIONS:
         results['4_ats_optimized'] = self.optimize_for_ats(resume_content, target_role)
         results['5_enhanced_skills'] = self.enhance_skills_section(job_analysis)
         results['6_keyword_experience'] = self.enhance_experience_with_keywords(resume_content, job_analysis)
-        results['7_tailored_resume'] = self.create_tailored_version(resume_content, job_analysis, target_role, target_company)
+        
+        # Create different resume versions based on user choice
+        if style_choice == "1":
+            # Story resume only
+            results['7_narrative_resume'] = self.create_narrative_resume(resume_content, job_analysis, target_role, target_company)
+        elif style_choice == "2":
+            # Standard resume only
+            results['7_enhanced_resume'] = self.create_enhanced_resume(resume_content, job_analysis, target_role, target_company)
+        else:
+            # Both versions (default if invalid choice)
+            results['7_narrative_resume'] = self.create_narrative_resume(resume_content, job_analysis, target_role, target_company)
+            results['8_enhanced_resume'] = self.create_enhanced_resume(resume_content, job_analysis, target_role, target_company)
         
         # Step 3: Create executive summary
-        results['8_executive_summary'] = f"""RESUME OPTIMIZATION EXECUTIVE SUMMARY
+        summary_key = '8_executive_summary' if style_choice in ["1", "2"] else '9_executive_summary'
+        results[summary_key] = f"""RESUME OPTIMIZATION EXECUTIVE SUMMARY
 
 OPTIMIZATION TARGET: {target_role} at {target_company}
 PROCESSING DATE: {datetime.now().strftime('%Y-%m-%d %H:%M')}
+RESUME STYLE: {"Story-Driven Narrative" if style_choice == "1" else "Professional Standard" if style_choice == "2" else "Both Narrative and Standard"}
 
 KEY IMPROVEMENTS IMPLEMENTED:
 >>> Technical Skills Enhancement: Aligned core competencies with job requirements
@@ -935,26 +1565,29 @@ KEY IMPROVEMENTS IMPLEMENTED:
 >>> Experience Enhancement: Strengthened job descriptions with powerful action verbs
 >>> Industry Alignment: Integrated relevant keywords and terminology
 >>> Cultural Fit: Emphasized alignment with company values and mission
+{(">>> Narrative Storytelling: Created career story showing growth and impact" if style_choice in ["1", "3"] else "")}
 
 OPTIMIZATION RESULTS:
-• Resume now contains {len([skill for skill in job_analysis.required_skills if skill.lower() in results['7_tailored_resume'].lower()])} of {len(job_analysis.required_skills)} required technical skills
+• Resume now contains {len([skill for skill in job_analysis.required_skills if skill.lower() in str(results).lower()])} of {len(job_analysis.required_skills)} required technical skills
 • Enhanced readability and professional formatting for improved recruiter appeal
 • Optimized for major ATS platforms including Workday, Greenhouse, and Lever
 • Increased keyword relevance score by incorporating industry-specific terminology
 • Strengthened value proposition with quantified achievements and results
+{("• Compelling career narrative that shows professional growth and future vision" if style_choice in ["1", "3"] else "")}
 
 NEXT STEPS:
-1. Review tailored resume version for accuracy and personal preferences
+1. Review optimized resume version(s) for accuracy and personal preferences
 2. Customize cover letter using provided job analysis insights  
 3. Prepare interview talking points based on enhanced experience descriptions
 4. Update LinkedIn profile to match optimized resume content
 5. Save multiple versions for different role types and industries
 
 RECOMMENDED USAGE:
-• Use "Tailored Resume" version as primary application document
-• Reference "ATS Optimized" version for online application systems
-• Leverage "Enhanced Skills" section for LinkedIn profile updates
-• Apply "Impact Rewrite" techniques to other professional documents"""
+{("• Use 'Narrative Resume' for roles emphasizing culture fit and leadership" if style_choice in ["1", "3"] else "")}
+{("• Use 'Enhanced Resume' for technical roles and ATS-heavy companies" if style_choice in ["2", "3"] else "")}
+{("• Use primary resume version as main application document" if style_choice in ["1", "2"] else "")}
+• Reference enhanced content for online application systems
+• Adapt storytelling elements for cover letters and interviews"""
 
         return results
     
@@ -972,6 +1605,7 @@ RECOMMENDED USAGE:
             '4_ats_optimized': 'resume_ats_optimized.txt',
             '5_enhanced_skills': 'enhanced_skills_section.txt',
             '6_keyword_experience': 'keyword_enhanced_experience.txt',
+            '7_narrative_resume': 'narrative_story_resume.txt',
             '7_tailored_resume': 'tailored_resume_final.txt',
             '8_executive_summary': 'optimization_executive_summary.txt'
         }
@@ -1141,6 +1775,42 @@ RECOMMENDED USAGE:
     def detect_dynamic_field(self, content: str) -> str:
         """Dynamically detect any career field and generate appropriate content"""
         
+        # Optical Engineering and Photonics fields (high priority)
+        optical_terms = ['optical', 'optics', 'photonics', 'laser', 'fiber optic', 'optical design', 'optical engineer', 'photonic', 'optical systems']
+        if any(term in content for term in optical_terms):
+            if 'engineer' in content or 'design' in content or 'systems' in content:
+                return 'optical_engineer'
+            else:
+                return 'optical_engineer'  # Default to optical engineer for any optical terms
+        
+        # Welding and Fabrication fields
+        welding_terms = ['welder', 'welding', 'fabrication', 'tig', 'mig', 'arc welding', 'stick welding', 'fabricator', 'welding inspector']
+        if any(term in content for term in welding_terms):
+            return 'welder'
+        
+        # Software Engineering and Development fields (improved detection)
+        software_terms = ['software', 'programming', 'code', 'developer', 'development', 'programmer', 'coding']
+        if any(term in content for term in software_terms):
+            # Check for specific software engineering roles
+            if any(term in content for term in ['software engineer', 'senior software', 'full stack', 'backend', 'frontend', 'web developer', 'developer', 'programming']):
+                return 'software_engineer'
+        
+        # Advanced Mathematics and Physics fields
+        quantum_terms = ['quantum', 'qubit', 'quantum computing', 'quantum algorithm', 'quantum mechanics', 'qiskit', 'cirq']
+        if any(term in content for term in quantum_terms):
+            return 'quantum_computing_scientist'
+            
+        advanced_math_terms = ['mathematics', 'mathematical', 'algebra', 'topology', 'analysis', 'geometry', 'number theory', 'differential', 'manifold', 'homology']
+        if any(term in content for term in advanced_math_terms):
+            if 'professor' in content or 'research' in content:
+                return 'mathematics_professor'
+            else:
+                return 'mathematician'
+        
+        physics_terms = ['physics', 'theoretical physics', 'particle physics', 'condensed matter', 'astrophysics', 'cosmology']
+        if any(term in content for term in physics_terms):
+            return 'theoretical_physicist'
+        
         # Medical fields pattern matching
         medical_terms = ['surgeon', 'doctor', 'physician', 'medical', 'hospital', 'patient', 'surgery', 'clinic', 'nurse', 'healthcare']
         if any(term in content for term in medical_terms):
@@ -1156,12 +1826,10 @@ RECOMMENDED USAGE:
             elif 'nurse' in content:
                 return 'nurse'
                 
-        # Engineering fields
-        engineering_terms = ['engineer', 'engineering', 'technical', 'design', 'development']
+        # Engineering fields (moved after optical and software to avoid conflicts)
+        engineering_terms = ['engineer', 'engineering', 'technical', 'design']
         if any(term in content for term in engineering_terms):
-            if 'software' in content or 'programming' in content or 'code' in content:
-                return 'software_engineer'
-            elif 'mechanical' in content or 'machine' in content:
+            if 'mechanical' in content or 'machine' in content:
                 return 'mechanical_engineer'
             elif 'civil' in content or 'construction' in content:
                 return 'civil_engineer'
@@ -1320,6 +1988,96 @@ RECOMMENDED USAGE:
     def get_field_data(self, field: str) -> dict:
         """Get education, skills, and projects data for a specific field"""
         field_data = {
+            'quantum_computing_scientist': {
+                'education': "Massachusetts Institute of Technology — Ph.D. in Quantum Information Science, 2020\nCalifornia Institute of Technology — M.S. in Physics, 2017\nHarvard University — B.S. in Physics and Mathematics (Summa Cum Laude), 2015",
+                'experience_title': 'Quantum Computing Research Scientist | Quantum Information Lab | 2020 - Present',
+                'experience_bullets': [
+                    'Developed novel quantum algorithms for optimization problems, achieving quadratic speedup over classical methods',
+                    'Implemented variational quantum eigensolvers (VQE) for molecular simulation with 99.9% accuracy',
+                    'Published 15+ papers in top-tier journals including Nature Quantum Information and Physical Review Letters',
+                    'Led quantum error correction research resulting in 50% reduction in logical error rates for surface codes'
+                ],
+                'skills': [
+                    'Quantum Algorithms: Shor\'s Algorithm, Grover\'s Algorithm, VQE, QAOA, Quantum Machine Learning',
+                    'Programming: Qiskit, Cirq, PennyLane, Q#, Python, MATLAB, Mathematica, Julia',
+                    'Mathematics: Linear Algebra, Group Theory, Tensor Networks, Information Theory, Optimization',
+                    'Hardware: Superconducting Qubits, Trapped Ions, Photonic Systems, NISQ Devices',
+                    'Research: Quantum Error Correction, Fault-Tolerant Computing, Quantum Simulation, Cryptography'
+                ],
+                'projects': [
+                    'Quantum Supremacy Demonstration: Led team achieving quantum advantage for random circuit sampling',
+                    'Quantum Chemistry Simulation: Developed VQE algorithms for drug discovery applications',
+                    'Error Correction Breakthrough: Designed new topological codes with threshold above 1%',
+                    'Quantum Machine Learning: Created quantum neural networks for pattern recognition tasks'
+                ]
+            },
+            'mathematics_professor': {
+                'education': "Princeton University — Ph.D. in Pure Mathematics (Algebraic Geometry), 2018\nMassachusetts Institute of Technology — M.S. in Mathematics, 2015\nHarvard University — B.A. in Mathematics (Phi Beta Kappa), 2013",
+                'experience_title': 'Assistant Professor of Mathematics | Research University | 2020 - Present',
+                'experience_bullets': [
+                    'Proved fundamental theorems in algebraic geometry, published in Annals of Mathematics and Inventiones',
+                    'Developed new techniques in homological algebra advancing K-theory and motivic cohomology',
+                    'Solved longstanding conjectures in arithmetic geometry using advanced cohomological methods',
+                    'Mentored 12+ graduate students and postdocs, with 8 completing Ph.D. dissertations under supervision'
+                ],
+                'skills': [
+                    'Pure Mathematics: Algebraic Geometry, Homological Algebra, Category Theory, Number Theory',
+                    'Analysis: Real/Complex Analysis, Functional Analysis, Harmonic Analysis, Differential Geometry',
+                    'Algebra: Commutative Algebra, Representation Theory, Lie Algebras, Algebraic Topology',
+                    'Computational: SageMath, Magma, GAP, Macaulay2, LaTeX, TikZ, Proof Assistants (Lean, Coq)',
+                    'Research: Spectral Sequences, Derived Categories, Sheaf Cohomology, Modular Forms'
+                ],
+                'projects': [
+                    'Breakthrough in Langlands Program: Established new cases of geometric Langlands correspondence',
+                    'Cohomology Theory Advancement: Developed new computational tools for étale cohomology',
+                    'Arithmetic Geometry Research: Proved rationality results for certain classes of algebraic varieties',
+                    'NSF CAREER Award: $500K grant for research in motivic homotopy theory and A¹-algebraic topology'
+                ]
+            },
+            'mathematician': {
+                'education': "Stanford University — Ph.D. in Applied Mathematics, 2019\nUniversity of California Berkeley — M.S. in Mathematics, 2016\nMassachusetts Institute of Technology — B.S. in Mathematics (Dean\'s List), 2014",
+                'experience_title': 'Research Mathematician | Applied Mathematics Institute | 2019 - Present',
+                'experience_bullets': [
+                    'Developed mathematical models for complex systems analysis, improving prediction accuracy by 40%',
+                    'Created novel algorithms for solving high-dimensional partial differential equations',
+                    'Published research in SIAM journals on computational mathematics and optimization theory',
+                    'Collaborated with interdisciplinary teams on machine learning and data science applications'
+                ],
+                'skills': [
+                    'Applied Mathematics: PDEs, Optimization Theory, Numerical Analysis, Stochastic Processes',
+                    'Computational: Python, MATLAB, R, C++, High-Performance Computing, Parallel Algorithms',
+                    'Statistics: Probability Theory, Statistical Learning, Bayesian Methods, Time Series Analysis',
+                    'Machine Learning: Deep Learning, Reinforcement Learning, Mathematical Foundations of ML'
+                ],
+                'projects': [
+                    'Climate Modeling: Developed mathematical models for climate change prediction systems',
+                    'Financial Mathematics: Created risk assessment models for derivatives pricing',
+                    'Optimization Algorithms: Designed convex optimization methods for large-scale problems',
+                    'Data Science Applications: Applied mathematical theory to big data analytics'
+                ]
+            },
+            'theoretical_physicist': {
+                'education': "Harvard University — Ph.D. in Theoretical Physics, 2019\nCalifornia Institute of Technology — M.S. in Physics, 2016\nMassachusetts Institute of Technology — B.S. in Physics (Magna Cum Laude), 2014",
+                'experience_title': 'Theoretical Physics Researcher | Institute for Advanced Study | 2019 - Present',
+                'experience_bullets': [
+                    'Developed new theoretical frameworks in quantum field theory and string theory',
+                    'Published groundbreaking research on black hole physics and holographic duality',
+                    'Presented findings at international conferences including Strings and ICHEP',
+                    'Collaborated with experimental groups at CERN and other major physics laboratories'
+                ],
+                'skills': [
+                    'Theoretical Physics: Quantum Field Theory, General Relativity, String Theory, Particle Physics',
+                    'Mathematical Physics: Differential Geometry, Lie Groups, Topology, Complex Analysis',
+                    'Computational: Mathematica, Python, C++, Monte Carlo Methods, Lattice QCD',
+                    'Research: AdS/CFT Correspondence, Supersymmetry, Gauge Theories, Cosmology'
+                ],
+                'projects': [
+                    'Black Hole Information Paradox: Contributed to resolution using holographic principles',
+                    'String Theory Compactification: Developed new models for extra-dimensional physics',
+                    'Quantum Gravity Research: Advanced understanding of spacetime emergence',
+                    'Particle Phenomenology: Created models connecting theory to experimental observations'
+                ]
+            },
             'electrician': {
                 'education': "Florida Atlantic University — B.S. Computer Science (Electrical Focus), Expected 2024 (Dean's List, GPA 3.7)",
                 'experience_title': 'Industrial Electrician & Maintenance Specialist | Independent Contractor | 2022 - Present',
@@ -1751,148 +2509,18 @@ RECOMMENDED USAGE:
             field_data = self.get_field_data(detected_field)
             
             print(f"    >>> Detected field: {detected_field}")
-            print(f"    >>> Using {detected_field}-specific resume content")
             
-            # Build resume in exact Ryan Weiler format with proper fonts and spacing
-            # 1. NAME (using Title style - 26pt, centered)
-            name_para = doc.add_paragraph()
-            name_para.style = doc.styles['Title']
-            name_run = name_para.add_run("Ryan Thomas Weiler")
-            name_run.font.name = 'Calibri'
-            name_run.font.size = Pt(26)  # Exact size from original
-            name_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            
-            # 2. CONTACT INFO (centered, Normal style with 12pt font)
-            contact_para = doc.add_paragraph()
-            contact_para.style = doc.styles['Normal']
-            contact_run = contact_para.add_run("📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com")
-            contact_run.font.name = 'Calibri'
-            contact_run.font.size = Pt(12)  # Standard readable size
-            contact_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            
-            social_para = doc.add_paragraph()
-            social_para.style = doc.styles['Normal']
-            social_run = social_para.add_run("🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr")
-            social_run.font.name = 'Calibri'
-            social_run.font.size = Pt(12)  # Standard readable size
-            social_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            
-            # Empty line with proper spacing
-            doc.add_paragraph()
-            
-            # 3. EDUCATION SECTION (using Heading 1 style - 14pt, bold)
-            edu_header = doc.add_paragraph()
-            edu_header.style = doc.styles['Heading 1']
-            edu_run = edu_header.add_run("Education")
-            edu_run.font.name = 'Calibri'
-            edu_run.font.size = Pt(14)  # Exact size from original
-            
-            # Education details (Normal style with 12pt font)
-            edu_detail = doc.add_paragraph()
-            edu_detail.style = doc.styles['Normal']
-            edu_text_run = edu_detail.add_run(field_data['education'])
-            edu_text_run.font.name = 'Calibri'
-            edu_text_run.font.size = Pt(12)  # Standard readable size
-            
-            # Empty line
-            doc.add_paragraph()
-            
-            # 4. EXPERIENCE & PROJECTS SECTION (using Heading 1 style - 14pt)
-            exp_header = doc.add_paragraph()
-            exp_header.style = doc.styles['Heading 1']
-            exp_run = exp_header.add_run("Experience & Projects (Continuous Timeline)")
-            exp_run.font.name = 'Calibri'
-            exp_run.font.size = Pt(14)  # Exact size from original
-            
-            # Extract and format experience from the tailored resume
-            resume_content = results.get('7_tailored_resume', '')
-            
-            # Add main experience using dynamic field-specific data
-            experiences = [
-                {
-                    'title': field_data['experience_title'],
-                    'bullets': field_data['experience_bullets']
-                },
-                {
-                    'title': f"{field_data['experience_title'].split('|')[0].strip()} Technician | Florida Atlantic University Facilities | 2021 - 2022",
-                    'bullets': [
-                        f"Supported campus-wide {detected_field} operations and maintenance across multiple facilities",
-                        f"Assisted with installation and system upgrades related to {detected_field} work",
-                        f"Performed preventive maintenance and collaborated with facilities team on repairs",
-                        f"Maintained accurate documentation and followed safety protocols"
-                    ]
-                }
-            ]
-            
-            for exp in experiences:
-                # Job title (Normal style, bold, 12pt)
-                job_para = doc.add_paragraph()
-                job_para.style = doc.styles['Normal']
-                job_run = job_para.add_run(exp['title'])
-                job_run.font.name = 'Calibri'
-                job_run.font.size = Pt(12)  # Standard readable size
-                job_run.bold = True
-                
-                # Bullets (Normal style with proper dash, 12pt)
-                for bullet in exp['bullets']:
-                    bullet_para = doc.add_paragraph()
-                    bullet_para.style = doc.styles['Normal']
-                    bullet_run = bullet_para.add_run(f"- {bullet}")
-                    bullet_run.font.name = 'Calibri'
-                    bullet_run.font.size = Pt(12)  # Standard readable size
-            
-            # Add key projects section
-            projects_para = doc.add_paragraph()
-            projects_para.style = doc.styles['Normal']
-            projects_run = projects_para.add_run("Key Projects & Certifications:")
-            projects_run.font.name = 'Calibri'
-            projects_run.font.size = Pt(12)  # Standard readable size
-            projects_run.bold = True
-            
-            project_bullets = field_data['projects']
-            
-            for project in project_bullets:
-                proj_para = doc.add_paragraph()
-                proj_para.style = doc.styles['Normal']
-                proj_run = proj_para.add_run(f"- {project}")
-                proj_run.font.name = 'Calibri'
-                proj_run.font.size = Pt(12)  # Standard readable size
-            
-            # Empty line
-            doc.add_paragraph()
-            
-            # 5. TECHNICAL SKILLS SECTION (using Heading 1 style - 14pt)
-            skills_header = doc.add_paragraph()
-            skills_header.style = doc.styles['Heading 1']
-            skills_run = skills_header.add_run("Technical Skills")
-            skills_run.font.name = 'Calibri'
-            skills_run.font.size = Pt(14)  # Exact size from original
-            
-            # Skills categories (Calibri 12pt)
-            skill_categories = field_data['skills']
-            
-            for skill_cat in skill_categories:
-                skill_para = doc.add_paragraph()
-                skill_para.style = doc.styles['Normal']
-                skill_run = skill_para.add_run(skill_cat)
-                skill_run.font.name = 'Calibri'
-                skill_run.font.size = Pt(12)  # Standard readable size
-            
-            # Empty line
-            doc.add_paragraph()
-            
-            # 6. REFERENCES SECTION (using Heading 1 style - 14pt)
-            ref_header = doc.add_paragraph()
-            ref_header.style = doc.styles['Heading 1']
-            ref_run = ref_header.add_run("References")
-            ref_run.font.name = 'Calibri'
-            ref_run.font.size = Pt(14)  # Exact size from original
-            
-            ref_para = doc.add_paragraph()
-            ref_para.style = doc.styles['Normal']
-            ref_text_run = ref_para.add_run("Available upon request")
-            ref_text_run.font.name = 'Calibri'
-            ref_text_run.font.size = Pt(12)  # Standard readable size
+            # Check if narrative resume exists (storytelling mode)
+            if '7_narrative_resume' in results:
+                print(f"    >>> Using narrative storytelling content")
+                narrative_content = results['7_narrative_resume']
+                # Create storytelling DOCX format
+                self.build_narrative_docx(doc, narrative_content)
+            else:
+                print(f"    >>> Using {detected_field}-specific resume content")
+                field_data = self.get_field_data(detected_field)
+                # Create standard DOCX format
+                self.build_standard_docx(doc, field_data, results, detected_field)
             
             # Save the document
             docx_path = os.path.join(output_dir, 'optimized_resume.docx')
@@ -1901,6 +2529,377 @@ RECOMMENDED USAGE:
             
         except Exception as e:
             print(f"ERROR: Error creating .docx resume: {e}")
+    
+    def add_hyperlink(self, paragraph, url, text):
+        """Add a clickable hyperlink to a paragraph"""
+        # Create hyperlink relationship
+        part = paragraph.part
+        r_id = part.relate_to(url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
+        
+        # Create the hyperlink element
+        hyperlink = OxmlElement('w:hyperlink')
+        hyperlink.set(qn('r:id'), r_id)
+        
+        # Create run element for the hyperlink text
+        run = OxmlElement('w:r')
+        
+        # Add run properties (font formatting)
+        rPr = OxmlElement('w:rPr')
+        
+        # Set color to blue
+        color = OxmlElement('w:color')
+        color.set(qn('w:val'), '0563C1')  # Standard hyperlink blue
+        rPr.append(color)
+        
+        # Set underline
+        underline = OxmlElement('w:u')
+        underline.set(qn('w:val'), 'single')
+        rPr.append(underline)
+        
+        # Set font
+        font = OxmlElement('w:rFonts')
+        font.set(qn('w:ascii'), 'Calibri')
+        font.set(qn('w:hAnsi'), 'Calibri')
+        rPr.append(font)
+        
+        # Set font size
+        size = OxmlElement('w:sz')
+        size.set(qn('w:val'), '24')  # 12pt = 24 half-points
+        rPr.append(size)
+        
+        run.append(rPr)
+        
+        # Add the text
+        text_elem = OxmlElement('w:t')
+        text_elem.text = text
+        run.append(text_elem)
+        
+        hyperlink.append(run)
+        paragraph._p.append(hyperlink)
+        
+        return hyperlink
+    
+    def build_narrative_docx(self, doc, narrative_content):
+        """Build DOCX using narrative storytelling content"""
+        
+        # Parse narrative content to extract sections
+        lines = narrative_content.split('\n')
+        sections = {'hook': '', 'name': '', 'contact': '', 'narrative': '', 'skills': [], 'experience': [], 'education': []}
+        
+        current_section = None
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+                
+            # Detect key elements
+            if '🔥 THE' in line or '🔬 THE' in line or '💻 THE' in line or '🌟 THE' in line:
+                sections['hook'] = line
+            elif 'CONTACT INFORMATION:' in line:
+                current_section = 'contact'
+                continue
+            elif 'PROFESSIONAL NARRATIVE:' in line:
+                current_section = 'narrative'
+                continue
+            elif 'TECHNICAL COMPETENCIES:' in line or 'CORE SKILLS:' in line:
+                current_section = 'skills'
+                continue
+            elif 'EXPERIENCE:' in line or 'PROFESSIONAL EXPERIENCE:' in line:
+                current_section = 'experience'
+                continue
+            elif line and not line.startswith('CAREER STORY RESUME') and not line.startswith('Chapter'):
+                # Extract content based on current section
+                if current_section is None and len(line.split()) <= 3 and any(c.isupper() for c in line):
+                    sections['name'] = line
+                elif current_section == 'contact':
+                    # Extract education content to separate section, filter from contact
+                    if ('university' in line.lower() or 'college' in line.lower()) and ('b.s.' in line.lower() or 'a.a.' in line.lower() or 'gpa' in line.lower()):
+                        sections['education'].append(line)
+                    elif not ('experience & projects' in line.lower() or 'built, trained' in line.lower()):
+                        sections['contact'] += line + '\n'
+                elif current_section == 'narrative':
+                    sections['narrative'] += line + ' '
+                elif current_section == 'skills' and line.startswith('•'):
+                    sections['skills'].append(line[1:].strip())
+                elif current_section == 'experience' and line.startswith('•'):
+                    sections['experience'].append(line[1:].strip())
+        
+        # 1. Opening Hook (if present)
+        if sections['hook']:
+            hook_para = doc.add_paragraph()
+            hook_para.style = doc.styles['Title']
+            hook_run = hook_para.add_run(sections['hook'])
+            hook_run.font.name = 'Calibri'
+            hook_run.font.size = Pt(16)
+            hook_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            doc.add_paragraph()
+        
+        # 2. NAME
+        name = sections['name'] if sections['name'] else "Ryan Thomas Weiler"
+        name_para = doc.add_paragraph()
+        name_para.style = doc.styles['Title']
+        name_run = name_para.add_run(name)
+        name_run.font.name = 'Calibri'
+        name_run.font.size = Pt(26)
+        name_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        
+        # 3. CONTACT INFO (NO DUPLICATES)
+        contact_text = sections['contact'].strip() if sections['contact'] else "📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com"
+        
+        # Parse contact text and create proper hyperlinks
+        contact_lines = contact_text.split('\n')
+        for contact_line in contact_lines:
+            if contact_line.strip():
+                contact_para = doc.add_paragraph()
+                contact_para.style = doc.styles['Normal']
+                contact_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                
+                # Parse line for URLs and create clickable hyperlinks
+                if 'https://' in contact_line:
+                    # Split line into parts around URLs
+                    parts = contact_line.split('https://')
+                    
+                    # Add text before first URL
+                    if parts[0].strip():
+                        contact_run = contact_para.add_run(parts[0])
+                        contact_run.font.name = 'Calibri'
+                        contact_run.font.size = Pt(12)
+                    
+                    # Process each URL
+                    for i, part in enumerate(parts[1:]):
+                        # Find where URL ends (space, pipe, or end of string)
+                        url_end = len(part)
+                        for char_idx, char in enumerate(part):
+                            if char in [' ', '|', '\n', '\t']:
+                                url_end = char_idx
+                                break
+                        
+                        # Extract URL and remaining text
+                        url = 'https://' + part[:url_end]
+                        remaining_text = part[url_end:]
+                        
+                        # Add clickable hyperlink
+                        try:
+                            self.add_hyperlink(contact_para, url, url)
+                        except Exception as e:
+                            # Fallback to styled text if hyperlink fails
+                            print(f"Warning: Could not create hyperlink for {url}: {e}")
+                            url_run = contact_para.add_run(url)
+                            url_run.font.name = 'Calibri'
+                            url_run.font.size = Pt(12)
+                            url_run.font.color.rgb = RGBColor(0, 0, 255)
+                            url_run.font.underline = True
+                        
+                        # Add remaining text after URL
+                        if remaining_text.strip():
+                            text_run = contact_para.add_run(remaining_text)
+                            text_run.font.name = 'Calibri'
+                            text_run.font.size = Pt(12)
+                else:
+                    # No URLs, just add as regular text
+                    contact_run = contact_para.add_run(contact_line.strip())
+                    contact_run.font.name = 'Calibri'
+                    contact_run.font.size = Pt(12)
+        
+        doc.add_paragraph()
+        
+        # 4. PROFESSIONAL NARRATIVE
+        if sections['narrative']:
+            narrative_header = doc.add_paragraph()
+            narrative_header.style = doc.styles['Heading 1']
+            narrative_run = narrative_header.add_run("Professional Narrative")
+            narrative_run.font.name = 'Calibri'
+            narrative_run.font.size = Pt(14)
+            
+            narrative_para = doc.add_paragraph()
+            narrative_para.style = doc.styles['Normal']
+            narrative_text_run = narrative_para.add_run(sections['narrative'].strip())
+            narrative_text_run.font.name = 'Calibri'
+            narrative_text_run.font.size = Pt(12)
+            doc.add_paragraph()
+        
+        # 5. TECHNICAL SKILLS
+        if sections['skills']:
+            skills_header = doc.add_paragraph()
+            skills_header.style = doc.styles['Heading 1']
+            skills_run = skills_header.add_run("Technical Competencies")
+            skills_run.font.name = 'Calibri'
+            skills_run.font.size = Pt(14)
+            
+            for skill in sections['skills'][:6]:
+                skill_para = doc.add_paragraph()
+                skill_para.style = doc.styles['Normal']
+                skill_run = skill_para.add_run(f"• {skill}")
+                skill_run.font.name = 'Calibri'
+                skill_run.font.size = Pt(12)
+            doc.add_paragraph()
+        
+        # 6. EDUCATION
+        edu_header = doc.add_paragraph()
+        edu_header.style = doc.styles['Heading 1']
+        edu_run = edu_header.add_run("Education")
+        edu_run.font.name = 'Calibri'
+        edu_run.font.size = Pt(14)
+        
+        # Use extracted education from narrative, or fallback to default
+        if sections['education']:
+            for edu_line in sections['education']:
+                edu_para = doc.add_paragraph()
+                edu_para.style = doc.styles['Normal']
+                edu_run = edu_para.add_run(edu_line)
+                edu_run.font.name = 'Calibri'
+                edu_run.font.size = Pt(12)
+        else:
+            # Fallback to default education
+            edu_para = doc.add_paragraph()
+            edu_para.style = doc.styles['Normal']
+            edu_run = edu_para.add_run("Florida Atlantic University — B.S. Computer Science, Expected 2024 (Dean's List, GPA 3.7)")
+            edu_run.font.name = 'Calibri'
+            edu_run.font.size = Pt(12)
+        doc.add_paragraph()
+        
+        # 7. EXPERIENCE
+        if sections['experience']:
+            exp_header = doc.add_paragraph()
+            exp_header.style = doc.styles['Heading 1']
+            exp_run = exp_header.add_run("Professional Experience")
+            exp_run.font.name = 'Calibri'
+            exp_run.font.size = Pt(14)
+            
+            for exp in sections['experience'][:8]:
+                exp_para = doc.add_paragraph()
+                exp_para.style = doc.styles['Normal']
+                exp_run = exp_para.add_run(f"• {exp}")
+                exp_run.font.name = 'Calibri'
+                exp_run.font.size = Pt(12)
+            doc.add_paragraph()
+        
+        # 8. REFERENCES
+        ref_header = doc.add_paragraph()
+        ref_header.style = doc.styles['Heading 1']
+        ref_run = ref_header.add_run("References")
+        ref_run.font.name = 'Calibri'
+        ref_run.font.size = Pt(14)
+        
+        ref_para = doc.add_paragraph()
+        ref_para.style = doc.styles['Normal']
+        ref_run = ref_para.add_run("Available upon request")
+        ref_run.font.name = 'Calibri'
+        ref_run.font.size = Pt(12)
+    
+    def build_standard_docx(self, doc, field_data, results, detected_field):
+        """Build DOCX using standard format with field-specific data"""
+        
+        # 1. NAME (using Title style - 26pt, centered)
+        name_para = doc.add_paragraph()
+        name_para.style = doc.styles['Title']
+        name_run = name_para.add_run("Ryan Thomas Weiler")
+        name_run.font.name = 'Calibri'
+        name_run.font.size = Pt(26)
+        name_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        
+        # 2. CONTACT INFO (centered, Normal style with 12pt font)
+        contact_para = doc.add_paragraph()
+        contact_para.style = doc.styles['Normal']
+        contact_run = contact_para.add_run("📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com")
+        contact_run.font.name = 'Calibri'
+        contact_run.font.size = Pt(12)
+        contact_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        
+        social_para = doc.add_paragraph()
+        social_para.style = doc.styles['Normal']
+        social_run = social_para.add_run("🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr")
+        social_run.font.name = 'Calibri'
+        social_run.font.size = Pt(12)
+        social_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        doc.add_paragraph()
+        
+        # 3. EDUCATION SECTION (using Heading 1 style - 14pt, bold)
+        edu_header = doc.add_paragraph()
+        edu_header.style = doc.styles['Heading 1']
+        edu_run = edu_header.add_run("Education")
+        edu_run.font.name = 'Calibri'
+        edu_run.font.size = Pt(14)
+        
+        edu_detail = doc.add_paragraph()
+        edu_detail.style = doc.styles['Normal']
+        edu_text_run = edu_detail.add_run(field_data['education'])
+        edu_text_run.font.name = 'Calibri'
+        edu_text_run.font.size = Pt(12)
+        doc.add_paragraph()
+        
+        # 4. EXPERIENCE & PROJECTS SECTION (using Heading 1 style - 14pt)
+        exp_header = doc.add_paragraph()
+        exp_header.style = doc.styles['Heading 1']
+        exp_run = exp_header.add_run("Experience & Projects (Continuous Timeline)")
+        exp_run.font.name = 'Calibri'
+        exp_run.font.size = Pt(14)
+        
+        # Add main experience using dynamic field-specific data
+        experiences = [
+            {
+                'title': field_data['experience_title'],
+                'bullets': field_data['experience_bullets']
+            },
+            {
+                'title': f"{field_data['experience_title'].split('|')[0].strip()} Technician | Florida Atlantic University Facilities | 2021 - 2022",
+                'bullets': [
+                    f"Supported campus-wide {detected_field} operations and maintenance across multiple facilities",
+                    f"Assisted with installation and system upgrades related to {detected_field} work",
+                    f"Performed preventive maintenance and collaborated with facilities team on repairs",
+                    f"Maintained accurate documentation and followed safety protocols"
+                ]
+            }
+        ]
+        
+        for exp in experiences:
+            # Job title (Normal style, bold, 12pt)
+            job_para = doc.add_paragraph()
+            job_para.style = doc.styles['Normal']
+            job_run = job_para.add_run(exp['title'])
+            job_run.font.name = 'Calibri'
+            job_run.font.size = Pt(12)
+            job_run.bold = True
+            
+            # Bullets (Normal style with proper dash, 12pt)
+            for bullet in exp['bullets']:
+                bullet_para = doc.add_paragraph()
+                bullet_para.style = doc.styles['Normal']
+                bullet_run = bullet_para.add_run(f"- {bullet}")
+                bullet_run.font.name = 'Calibri'
+                bullet_run.font.size = Pt(12)
+        
+        doc.add_paragraph()
+        
+        # 5. SKILLS SECTION (using Heading 1 style - 14pt)
+        skills_header = doc.add_paragraph()
+        skills_header.style = doc.styles['Heading 1']
+        skills_run = skills_header.add_run("Technical Skills")
+        skills_run.font.name = 'Calibri'
+        skills_run.font.size = Pt(14)
+        
+        # Skills content using dynamic field-specific data
+        for skill in field_data['skills']:
+            skill_para = doc.add_paragraph()
+            skill_para.style = doc.styles['Normal']
+            skill_run = skill_para.add_run(f"• {skill}")
+            skill_run.font.name = 'Calibri'
+            skill_run.font.size = Pt(12)
+        
+        doc.add_paragraph()
+        
+        # 6. REFERENCES SECTION (using Heading 1 style - 14pt)
+        ref_header = doc.add_paragraph()
+        ref_header.style = doc.styles['Heading 1']
+        ref_run = ref_header.add_run("References")
+        ref_run.font.name = 'Calibri'
+        ref_run.font.size = Pt(14)
+        
+        ref_para = doc.add_paragraph()
+        ref_para.style = doc.styles['Normal']
+        ref_text_run = ref_para.add_run("Available upon request")
+        ref_text_run.font.name = 'Calibri'
+        ref_text_run.font.size = Pt(12)
 
     def browse_for_job_description(self) -> Optional[str]:
         """Open file browser to select job description file with error handling"""
@@ -2326,6 +3325,271 @@ Skills:
     print(f"    Results saved to: {output_dir}")
     print(f"    Files created: 8 analysis files + 1 formatted .docx resume")
     print(f"    Open the folder to view your optimized resume!")
+
+def build_narrative_docx(self, doc, narrative_content):
+    """Build DOCX using narrative storytelling content"""
+    
+    # Parse narrative content to extract sections
+    lines = narrative_content.split('\n')
+    sections = {'hook': '', 'name': '', 'contact': '', 'narrative': '', 'skills': [], 'experience': []}
+    
+    current_section = None
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        # Detect key elements
+        if '🔥 THE' in line or '🔬 THE' in line or '💻 THE' in line or '🌟 THE' in line:
+            sections['hook'] = line
+        elif 'CONTACT INFORMATION:' in line:
+            current_section = 'contact'
+            continue
+        elif 'PROFESSIONAL NARRATIVE:' in line:
+            current_section = 'narrative'
+            continue
+        elif 'TECHNICAL COMPETENCIES:' in line or 'CORE SKILLS:' in line:
+            current_section = 'skills'
+            continue
+        elif 'EXPERIENCE:' in line or 'PROFESSIONAL EXPERIENCE:' in line:
+            current_section = 'experience'
+            continue
+        elif line and not line.startswith('CAREER STORY RESUME') and not line.startswith('Chapter'):
+            # Extract content based on current section
+            if current_section is None and len(line.split()) <= 3 and any(c.isupper() for c in line):
+                sections['name'] = line
+            elif current_section == 'contact':
+                sections['contact'] += line + '\n'
+            elif current_section == 'narrative':
+                sections['narrative'] += line + ' '
+            elif current_section == 'skills' and line.startswith('•'):
+                sections['skills'].append(line[1:].strip())
+            elif current_section == 'experience' and line.startswith('•'):
+                sections['experience'].append(line[1:].strip())
+    
+    # 1. Opening Hook (if present)
+    if sections['hook']:
+        hook_para = doc.add_paragraph()
+        hook_para.style = doc.styles['Title']
+        hook_run = hook_para.add_run(sections['hook'])
+        hook_run.font.name = 'Calibri'
+        hook_run.font.size = Pt(16)
+        hook_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        doc.add_paragraph()
+    
+    # 2. NAME
+    name = sections['name'] if sections['name'] else "Ryan Thomas Weiler"
+    name_para = doc.add_paragraph()
+    name_para.style = doc.styles['Title']
+    name_run = name_para.add_run(name)
+    name_run.font.name = 'Calibri'
+    name_run.font.size = Pt(26)
+    name_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    # 3. CONTACT INFO
+    contact_para = doc.add_paragraph()
+    contact_para.style = doc.styles['Normal']
+    contact_text = sections['contact'].strip() if sections['contact'] else "📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com"
+    contact_run = contact_para.add_run(contact_text)
+    contact_run.font.name = 'Calibri'
+    contact_run.font.size = Pt(12)
+    contact_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    social_para = doc.add_paragraph()
+    social_para.style = doc.styles['Normal']
+    social_run = social_para.add_run("🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr")
+    social_run.font.name = 'Calibri'
+    social_run.font.size = Pt(12)
+    social_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    doc.add_paragraph()
+    
+    # 4. PROFESSIONAL NARRATIVE
+    if sections['narrative']:
+        narrative_header = doc.add_paragraph()
+        narrative_header.style = doc.styles['Heading 1']
+        narrative_run = narrative_header.add_run("Professional Narrative")
+        narrative_run.font.name = 'Calibri'
+        narrative_run.font.size = Pt(14)
+        
+        narrative_para = doc.add_paragraph()
+        narrative_para.style = doc.styles['Normal']
+        narrative_text_run = narrative_para.add_run(sections['narrative'].strip())
+        narrative_text_run.font.name = 'Calibri'
+        narrative_text_run.font.size = Pt(12)
+        doc.add_paragraph()
+    
+    # 5. TECHNICAL SKILLS
+    if sections['skills']:
+        skills_header = doc.add_paragraph()
+        skills_header.style = doc.styles['Heading 1']
+        skills_run = skills_header.add_run("Technical Competencies")
+        skills_run.font.name = 'Calibri'
+        skills_run.font.size = Pt(14)
+        
+        for skill in sections['skills'][:6]:
+            skill_para = doc.add_paragraph()
+            skill_para.style = doc.styles['Normal']
+            skill_run = skill_para.add_run(f"• {skill}")
+            skill_run.font.name = 'Calibri'
+            skill_run.font.size = Pt(12)
+        doc.add_paragraph()
+    
+    # 6. EDUCATION
+    edu_header = doc.add_paragraph()
+    edu_header.style = doc.styles['Heading 1']
+    edu_run = edu_header.add_run("Education")
+    edu_run.font.name = 'Calibri'
+    edu_run.font.size = Pt(14)
+    
+    edu_para = doc.add_paragraph()
+    edu_para.style = doc.styles['Normal']
+    edu_run = edu_para.add_run("Florida Atlantic University — B.S. Computer Science, Expected 2024 (Dean's List, GPA 3.7)")
+    edu_run.font.name = 'Calibri'
+    edu_run.font.size = Pt(12)
+    doc.add_paragraph()
+    
+    # 7. EXPERIENCE
+    if sections['experience']:
+        exp_header = doc.add_paragraph()
+        exp_header.style = doc.styles['Heading 1']
+        exp_run = exp_header.add_run("Professional Experience")
+        exp_run.font.name = 'Calibri'
+        exp_run.font.size = Pt(14)
+        
+        for exp in sections['experience'][:8]:
+            exp_para = doc.add_paragraph()
+            exp_para.style = doc.styles['Normal']
+            exp_run = exp_para.add_run(f"• {exp}")
+            exp_run.font.name = 'Calibri'
+            exp_run.font.size = Pt(12)
+        doc.add_paragraph()
+    
+    # 8. REFERENCES
+    ref_header = doc.add_paragraph()
+    ref_header.style = doc.styles['Heading 1']
+    ref_run = ref_header.add_run("References")
+    ref_run.font.name = 'Calibri'
+    ref_run.font.size = Pt(14)
+    
+    ref_para = doc.add_paragraph()
+    ref_para.style = doc.styles['Normal']
+    ref_run = ref_para.add_run("Available upon request")
+    ref_run.font.name = 'Calibri'
+    ref_run.font.size = Pt(12)
+
+def build_standard_docx(self, doc, field_data, results, detected_field):
+    """Build DOCX using standard format with field-specific data"""
+    
+    # 1. NAME (using Title style - 26pt, centered)
+    name_para = doc.add_paragraph()
+    name_para.style = doc.styles['Title']
+    name_run = name_para.add_run("Ryan Thomas Weiler")
+    name_run.font.name = 'Calibri'
+    name_run.font.size = Pt(26)
+    name_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    # 2. CONTACT INFO (centered, Normal style with 12pt font)
+    contact_para = doc.add_paragraph()
+    contact_para.style = doc.styles['Normal']
+    contact_run = contact_para.add_run("📞 (561) 906-2118 | ✉️ ryan_wlr@yahoo.com")
+    contact_run.font.name = 'Calibri'
+    contact_run.font.size = Pt(12)
+    contact_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    social_para = doc.add_paragraph()
+    social_para.style = doc.styles['Normal']
+    social_run = social_para.add_run("🔗 LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/ | 💻 GitHub: https://github.com/ryan-wlr")
+    social_run.font.name = 'Calibri'
+    social_run.font.size = Pt(12)
+    social_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    doc.add_paragraph()
+    
+    # 3. EDUCATION SECTION (using Heading 1 style - 14pt, bold)
+    edu_header = doc.add_paragraph()
+    edu_header.style = doc.styles['Heading 1']
+    edu_run = edu_header.add_run("Education")
+    edu_run.font.name = 'Calibri'
+    edu_run.font.size = Pt(14)
+    
+    edu_detail = doc.add_paragraph()
+    edu_detail.style = doc.styles['Normal']
+    edu_text_run = edu_detail.add_run(field_data['education'])
+    edu_text_run.font.name = 'Calibri'
+    edu_text_run.font.size = Pt(12)
+    doc.add_paragraph()
+    
+    # 4. EXPERIENCE & PROJECTS SECTION (using Heading 1 style - 14pt)
+    exp_header = doc.add_paragraph()
+    exp_header.style = doc.styles['Heading 1']
+    exp_run = exp_header.add_run("Experience & Projects (Continuous Timeline)")
+    exp_run.font.name = 'Calibri'
+    exp_run.font.size = Pt(14)
+    
+    # Add main experience using dynamic field-specific data
+    experiences = [
+        {
+            'title': field_data['experience_title'],
+            'bullets': field_data['experience_bullets']
+        },
+        {
+            'title': f"{field_data['experience_title'].split('|')[0].strip()} Technician | Florida Atlantic University Facilities | 2021 - 2022",
+            'bullets': [
+                f"Supported campus-wide {detected_field} operations and maintenance across multiple facilities",
+                f"Assisted with installation and system upgrades related to {detected_field} work",
+                f"Performed preventive maintenance and collaborated with facilities team on repairs",
+                f"Maintained accurate documentation and followed safety protocols"
+            ]
+        }
+    ]
+    
+    for exp in experiences:
+        # Job title (Normal style, bold, 12pt)
+        job_para = doc.add_paragraph()
+        job_para.style = doc.styles['Normal']
+        job_run = job_para.add_run(exp['title'])
+        job_run.font.name = 'Calibri'
+        job_run.font.size = Pt(12)
+        job_run.bold = True
+        
+        # Bullets (Normal style with proper dash, 12pt)
+        for bullet in exp['bullets']:
+            bullet_para = doc.add_paragraph()
+            bullet_para.style = doc.styles['Normal']
+            bullet_run = bullet_para.add_run(f"- {bullet}")
+            bullet_run.font.name = 'Calibri'
+            bullet_run.font.size = Pt(12)
+    
+    doc.add_paragraph()
+    
+    # 5. SKILLS SECTION (using Heading 1 style - 14pt)
+    skills_header = doc.add_paragraph()
+    skills_header.style = doc.styles['Heading 1']
+    skills_run = skills_header.add_run("Technical Skills")
+    skills_run.font.name = 'Calibri'
+    skills_run.font.size = Pt(14)
+    
+    # Skills content using dynamic field-specific data
+    for skill in field_data['skills']:
+        skill_para = doc.add_paragraph()
+        skill_para.style = doc.styles['Normal']
+        skill_run = skill_para.add_run(f"• {skill}")
+        skill_run.font.name = 'Calibri'
+        skill_run.font.size = Pt(12)
+    
+    doc.add_paragraph()
+    
+    # 6. REFERENCES SECTION (using Heading 1 style - 14pt)
+    ref_header = doc.add_paragraph()
+    ref_header.style = doc.styles['Heading 1']
+    ref_run = ref_header.add_run("References")
+    ref_run.font.name = 'Calibri'
+    ref_run.font.size = Pt(14)
+    
+    ref_para = doc.add_paragraph()
+    ref_para.style = doc.styles['Normal']
+    ref_text_run = ref_para.add_run("Available upon request")
+    ref_text_run.font.name = 'Calibri'
+    ref_text_run.font.size = Pt(12)
 
 
 if __name__ == "__main__":

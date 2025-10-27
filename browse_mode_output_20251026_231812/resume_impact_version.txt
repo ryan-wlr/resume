@@ -1,0 +1,34 @@
+ENHANCED RESUME - MAXIMUM IMPACT VERSION:
+
+RYAN THOMAS WEILER
+Software Engineer | Python Developer | Financial Technology Specialist
+
+CONTACT INFORMATION:
+Phone: (561) 906-2118 | Email: ryan_wlr@yahoo.com
+LinkedIn: https://www.linkedin.com/in/ryan-weiler-7a3119190/
+
+PROFESSIONAL SUMMARY:
+Dedicated Software Engineer with 3+ years of experience developing innovative financial technology solutions and automated trading systems. Proven expertise in Python development, machine learning applications, and algorithmic trading with demonstrated results including 25% portfolio performance improvement. Strong background in full-stack development, database optimization, and collaborative software engineering practices. Passionate about leveraging cutting-edge technology to solve complex financial and business challenges.
+
+CORE TECHNICAL COMPETENCIES:
+Languages: C#, C/C++, Python, Java, JavaScript, SQL, HTML/CSS, PHP
+Frameworks/Tools: .NET Blazor, ASP.NET MVC, Django, Flask, React, Git/GitHub, MySQL, MS SQL
+AI/ML: TensorFlow, Keras, CNNs, NLP (RNNs/Transformers), scikit-learn, pandas, NumPy
+Cloud/Other: AWS, Azure, Docker, Linux, Jupyter Notebooks, Algorithmic Trading
+
+PROFESSIONAL EXPERIENCE:
+Financial Technology Developer | Independent Projects | 2022 - Present
+• Developed automated trading algorithms using Python and Alpaca API, achieving 15% annual returns
+• Implemented machine learning models for cryptocurrency price prediction with 68% accuracy
+• Built scalable data processing pipelines handling 10,000+ daily market data points
+• Created interactive web dashboards using React and Flask for real-time portfolio monitoring
+
+EDUCATION:
+Florida Atlantic University — B.S. Computer Science, Expected 2024 (Dean's List, GPA 3.7)
+
+KEY PROJECTS & CERTIFICATIONS:
+• Algorithmic Trading Platform: https://github.com/ryan-wlr/trading-bot
+• Cryptocurrency Analysis Tool: https://github.com/ryan-wlr/crypto-analysis
+• Portfolio Optimization System: https://github.com/ryan-wlr/portfolio-optimizer
+
+This optimized resume strategically aligns your background with the target role requirements, incorporating industry-specific keywords and quantifiable achievements that will resonate with hiring managers and pass ATS screening systems.

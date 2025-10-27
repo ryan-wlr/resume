@@ -47,6 +47,9 @@ Your resume folder now contains **ALL** necessary files from the lum folder plus
 |------|---------|
 | `sample_brain_surgeon_job.txt` | Sample job description |
 | `sample_current_resume.txt` | Sample current resume |
+| `sample_mathematician_resume.txt` | **Advanced mathematics resume sample** |
+| `quantum_computing_job.txt` | **Quantum computing position description** |
+| `mathematics_professor_job.txt` | **Mathematics professor position** |
 | `Ryan_Weiler_Resume.docx` | **Original resume template** |
 | `electrician_job_description.txt` | Sample electrician job |
 | `plumber_job_description.txt` | Sample plumber job |
@@ -105,7 +108,17 @@ All files needed to run the resume optimizer are now in the resume folder:
 
 ## 🚀 **FEATURES**
 
-- **Universal Career Support**: Works for ANY profession (brain surgeon, marine biologist, plumber, etc.)
+- **Universal Career Support**: Works for ANY profession including:
+  - **🧮 Advanced Mathematics**: Quantum Computing, Pure Mathematics, Theoretical Physics
+  - **🔬 Research Fields**: Mathematics Professor, Research Scientist, Theoretical Physicist
+  - **⚗️ Scientific Positions**: Applied Mathematician, Quantum Information Scientist
+  - **🏥 Medical**: Brain surgeon, cardiologist, nurse, doctor
+  - **🔧 Engineering**: Mechanical, civil, software, electrical
+  - **🍽️ Service Industries**: Chef, plumber, electrician, dishwasher
+  - **💼 Professional**: Lawyer, accountant, teacher
+- **High-Level Mathematics**: Includes quantum algorithms, algebraic geometry, topology, differential equations
+- **Quantum Computing**: Covers Qiskit, quantum error correction, VQE, quantum machine learning
+- **Advanced Physics**: String theory, quantum field theory, mathematical physics
 - **Multiple Input Methods**: File dialogs, command line, sample files
 - **Professional Output**: Perfect DOCX formatting matching Ryan's template
 - **Complete Standalone**: No external dependencies on lum folder

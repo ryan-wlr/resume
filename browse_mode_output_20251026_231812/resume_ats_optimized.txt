@@ -1,0 +1,27 @@
+ATS-OPTIMIZED RESUME VERSION:
+
+RYAN THOMAS WEILER
+Financial Technology Developer
+
+TECHNICAL SKILLS:
+Languages: C#, C/C++, Python, Java, JavaScript, SQL, HTML/CSS, PHP
+Frameworks/Tools: .NET Blazor, ASP.NET MVC, Django, Flask, React, Git/GitHub, MySQL, MS SQL
+AI/ML: TensorFlow, Keras, CNNs, NLP (RNNs/Transformers), scikit-learn, pandas, NumPy
+Cloud/Other: AWS, Azure, Docker, Linux, Jupyter Notebooks, Algorithmic Trading
+
+PROFESSIONAL EXPERIENCE:
+Financial Technology Developer | Independent Projects | 2022 - Present
+• Developed automated trading algorithms using Python and Alpaca API, achieving 15% annual returns
+• Implemented machine learning models for cryptocurrency price prediction with 68% accuracy
+• Built scalable data processing pipelines handling 10,000+ daily market data points
+• Created interactive web dashboards using React and Flask for real-time portfolio monitoring
+
+EDUCATION:
+Florida Atlantic University — B.S. Computer Science, Expected 2024 (Dean's List, GPA 3.7)
+
+CERTIFICATIONS & ACHIEVEMENTS:
+• Algorithmic Trading Platform: https://github.com/ryan-wlr/trading-bot
+• Cryptocurrency Analysis Tool: https://github.com/ryan-wlr/crypto-analysis
+• Portfolio Optimization System: https://github.com/ryan-wlr/portfolio-optimizer
+
+This ATS-optimized version incorporates relevant keywords and proper formatting to maximize compatibility with applicant tracking systems while maintaining readability for human reviewers.
