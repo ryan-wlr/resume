@@ -4,6 +4,14 @@
 
 This next-generation resume optimization system combines **AI-powered storytelling** with **professional formatting** to create compelling resumes that pass ATS systems while engaging human recruiters. Works for **ANY career field** including specialized positions like brain surgeon, optical engineer, marine biologist, and more.
 
+## Latest Resume Output
+
+The repository includes an ATS-friendly resume tailored to the supplied Google Software Engineer job description:
+
+- [Ryan Weiler Google Software Engineer Resume](./Ryan_Weiler_Google_Software_Engineer_Resume.docx)
+- Preserves the resume's factual **Work Experience & Projects** timeline and **Education** entries.
+- Highlights relevant Python, C/C++, AI/ML, TensorFlow, Keras, CNNs, NLP/Transformers, robotics, REST API, Azure, and SQL experience.
+
 ## ✨ Key Features
 
 ### 📖 **Storytelling Resume System (NEW!)**
